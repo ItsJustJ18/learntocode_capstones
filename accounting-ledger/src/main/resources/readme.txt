@@ -22,7 +22,6 @@ Install IntelliJ Community Edition
 Contribution or makers of this project
 Jermaine Eggleston
 
-
 License
 YearUp United Java Development Program
 

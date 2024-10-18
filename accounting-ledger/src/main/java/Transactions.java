@@ -11,18 +11,9 @@ public class Transactions {
 
     private String vendor;
 
-    private double userAmount;
+    private Double userAmount;
 
-    @Override
-    public String toString() {
-        return "Transactions{" +
-                "date=" + date +
-                ", time=" + time +
-                ", description='" + description + '\'' +
-                ", vendor='" + vendor + '\'' +
-                ", userAmount=" + userAmount +
-                '}';
-    }
+
 
     public LocalDate getDate() {
         return date;
@@ -56,7 +47,7 @@ public class Transactions {
         this.vendor = vendor;
     }
 
-    public double getUserAmount() {
+    public Double getUserAmount() {
         return userAmount;
     }
 
@@ -64,12 +55,22 @@ public class Transactions {
         this.userAmount = userAmount;
     }
 
-    public Transactions(LocalDate date, LocalTime time, String description, String vendor, double userAmount) {
+    public Transactions(LocalDate date, LocalTime time, String description, String vendor, Double userAmount) {
         this.date = date;
         this.time = time;
         this.description = description;
         this.vendor = vendor;
         this.userAmount = userAmount;
+    }
+
+    @Override
+    public String toString() {
+        return date +
+                "|" + time +
+                "|" + description +
+                "|" + vendor + "|" + userAmount;
+
+        //2024-10-17|06:30:11|Megan|Rockafella|250
     }
 }
 
