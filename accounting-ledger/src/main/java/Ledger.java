@@ -13,7 +13,7 @@ public class Ledger {
     public static String choice;
     public static List<Transactions> allTransactions;
     public static final String filePath = "src/main/resources/transaction.csv";
-    static  Scanner userInput;
+    static Scanner userInput;
 
 
     public static void main(String[] args) throws IOException {
@@ -28,9 +28,6 @@ public class Ledger {
         //variable chosen as to detect a user
         //to tell the local time when using LocalTime.now
         LocalTime currentTime = LocalTime.now();
-
-
-
 
 
         //boolean while loop until statement is false
@@ -74,17 +71,17 @@ public class Ledger {
                 System.out.printf("You now have: $%.2f", userAccount);
                 System.out.println();
                 System.out.println("Here's the transaction made to your account: ");
-                System.out.printf("Date: " + String.valueOf(now()) + " Time: " + LocalTime.now().withNano(0) + " Desc: " + description + " Vendor: " + vendor + " Account Amount: $%.2f", userAccount);
+                System.out.printf("Date: " + String.valueOf(now()) + " Time: " + LocalTime.now().withNano(0) + " Desc: " + description + " Vendor: " + vendor + " Amount: $%.2f", userAccount);
                 System.out.println();
                 //to do show money they want to add to the account
                 //to do show money that's added to the account (no calculations)
                 // consume the leftover new line character
 
-                Transactions payTransaction = new Transactions(LocalDate.now(),LocalTime.now().withNano(0),description, vendor,depositAmount);
+                Transactions payTransaction = new Transactions(LocalDate.now(), LocalTime.now().withNano(0), description, vendor, depositAmount);
 
                 writeToCsvFile(payTransaction);
                 allTransactions.add(payTransaction);
-            //    System.out.println(allTransactions);
+                //    System.out.println(allTransactions);
 
             } else if (choice.equalsIgnoreCase("P")) {
                 String statement = "";
@@ -112,12 +109,12 @@ public class Ledger {
                 System.out.printf("You now have: $%.2f", userAccount);
                 System.out.println();
                 System.out.println("Here's the transaction made to your account: ");
-                System.out.printf("Date: " + String.valueOf(now()) + " Time: " + LocalTime.now().withNano(0) + " Desc: " + description + " Vendor: " + vendor + " Account Amount: $%.2f", userAccount);
+                System.out.printf("Date: " + String.valueOf(now()) + " Time: " + LocalTime.now().withNano(0) + " Desc: " + description + " Vendor: " + vendor + " Amount: $%.2f", userAccount);
                 System.out.println();
 
-               Transactions payTransaction = new Transactions(LocalDate.now(),LocalTime.now().withNano(0),description, vendor,-paymentAmount);
+                Transactions payTransaction = new Transactions(LocalDate.now(), LocalTime.now().withNano(0), description, vendor, -paymentAmount);
                 allTransactions.add(payTransaction);
-               writeToCsvFile(payTransaction);
+                writeToCsvFile(payTransaction);
 
 
             } else if (choice.equalsIgnoreCase("L")) {
@@ -142,19 +139,19 @@ public class Ledger {
                             """);
                     choice = userInput.nextLine();
 
-                 //   boolean display_return = true;
+                    //   boolean display_return = true;
 
-                    if(choice.equalsIgnoreCase("A")) {
+                    if (choice.equalsIgnoreCase("A")) {
                         System.out.println("These are the following entries made to your account as of " + LocalTime.now().withNano(0) + " " + now());
-                        for(Transactions transaction: allTransactions){
+                        for (Transactions transaction : allTransactions) {
                             System.out.println(transaction);
                         }
                     } else if (choice.equalsIgnoreCase("D")) {
 
                         System.out.println("Here are all the deposits made so far. ");
 
-                        for(Transactions transaction: allTransactions){
-                            if( transaction.getUserAmount() > 0 ){
+                        for (Transactions transaction : allTransactions) {
+                            if (transaction.getUserAmount() > 0) {
                                 System.out.println(transaction);
                             }
                         }
@@ -163,22 +160,22 @@ public class Ledger {
                     } else if (choice.equalsIgnoreCase("P")) {
                         System.out.println("Here are all the payments you have made so far. ");
 
-                        for(Transactions transaction: allTransactions){
-                            if( transaction.getUserAmount() < 0 ){
+                        for (Transactions transaction : allTransactions) {
+                            if (transaction.getUserAmount() < 0) {
                                 System.out.println(transaction);
                             }
                         }
 
-                    } else if(choice.equalsIgnoreCase("R")){
+                    } else if (choice.equalsIgnoreCase("R")) {
 
                         System.out.println("Reports menu");
-                        //reportts menu
+                        //reports menu
                         reportsPage();
                     } else if (choice.equalsIgnoreCase("H")) {
-                       ledger_decision = false;
-                       // return;
+                        ledger_decision = false;
+                        // return;
                     } else {
-                          System.out.println("Sorry but that isn't one of the following options provided. Please select either D (deposit), P (make payment), L (Ledger), R (Reports), or H (Home Screen). ");
+                        System.out.println("Sorry but that isn't one of the following options provided. Please select either D (deposit), P (make payment), L (Ledger), R (Reports), or H (Home Screen). ");
 
                     }
                 }
@@ -218,8 +215,8 @@ public class Ledger {
             if (choice.equals("1")) {
 
                 System.out.println(" The month of " + LocalDate.now());
-                for(Transactions transaction: allTransactions){
-                    if(transaction.getDate().isAfter(LocalDate.now().withDayOfMonth(1))){
+                for (Transactions transaction : allTransactions) {
+                    if (transaction.getDate().isAfter(LocalDate.now().withDayOfMonth(1))) {
                         System.out.println(transaction);
                     }
                 }
@@ -227,8 +224,8 @@ public class Ledger {
             } else if (choice.equals("2")) {
 
                 System.out.println(" Here's all transactions made in the previous month. ");
-                for(Transactions transaction: allTransactions){
-                    if(transaction.getDate().isBefore(LocalDate.now().withDayOfMonth(1)) && transaction.getDate().isAfter(LocalDate.of(2024,9,1))){
+                for (Transactions transaction : allTransactions) {
+                    if (transaction.getDate().isBefore(LocalDate.now().withDayOfMonth(1)) && transaction.getDate().isAfter(LocalDate.of(2024, 9, 1))) {
                         System.out.println(transaction);
                     }
                 }
@@ -237,8 +234,8 @@ public class Ledger {
             } else if (choice.equals("3")) {
                 System.out.println(" Here's all transactions made from this year to " + LocalDate.now());
 
-                for(Transactions transaction: allTransactions){
-                    if(transaction.getDate().isAfter(LocalDate.of(2024,1,1))){
+                for (Transactions transaction : allTransactions) {
+                    if (transaction.getDate().isAfter(LocalDate.of(2024, 1, 1))) {
                         System.out.println(transaction);
                     }
                 }
@@ -247,30 +244,30 @@ public class Ledger {
             } else if (choice.equals("4")) {
                 System.out.println(" Here's all the transactions made from the previous year. ");
 
-                for(Transactions transaction: allTransactions){
-                    if(transaction.getDate().isAfter(LocalDate.of(2023,1,1)) && transaction.getDate().isBefore(LocalDate.of(2024,1,1))){
+                for (Transactions transaction : allTransactions) {
+                    if (transaction.getDate().isAfter(LocalDate.of(2023, 1, 1)) && transaction.getDate().isBefore(LocalDate.of(2024, 1, 1))) {
                         System.out.println(transaction);
                     }
                 }
 
-            } else if(choice.equals("5")){
+            } else if (choice.equals("5")) {
 
                 System.out.println(" Which vendor would you like to search for?");
                 String vendor = userInput.nextLine();
 
-                for(Transactions transaction: allTransactions){
-                    if(transaction.getVendor().equalsIgnoreCase(vendor)){
+                for (Transactions transaction : allTransactions) {
+                    if (transaction.getVendor().equalsIgnoreCase(vendor)) {
                         System.out.println(transaction);
                     }
                 }
 
 
                 System.out.println("  ");
-            } else if(choice.equals("0")){
+            } else if (choice.equals("0")) {
 
                 make_your_choice = false;
 
-            } else{
+            } else {
                 System.out.println("Sorry invalid entry.");
             }
 
@@ -278,23 +275,23 @@ public class Ledger {
     }
 
     //create method to load all transaction from the csv file into an arraylist as soon as the app is started
-    public static List<Transactions> loadTransactions(){
+    public static List<Transactions> loadTransactions() {
         List<Transactions> transactionsFromFile = new ArrayList<>();
 
         try {
 
-        FileReader ledgerreader = new FileReader(filePath);
-        BufferedReader bufferedReader = new BufferedReader(ledgerreader);
-        String superReader = bufferedReader.readLine();
+            FileReader ledgerreader = new FileReader(filePath);
+            BufferedReader bufferedReader = new BufferedReader(ledgerreader);
+            String superReader = bufferedReader.readLine();
 
             while ((superReader = bufferedReader.readLine()) != null) {
                 String[] boomba = superReader.split("\\|");
                 Transactions transaction = new Transactions((parse(boomba[0])), ((LocalTime.parse(boomba[1]))), (boomba[2]), (boomba[3]), (Double.parseDouble(boomba[4])));
-              transactionsFromFile.add(transaction);
+                transactionsFromFile.add(transaction);
                 //print all transactions made from the user
             }
 
-        } catch (Exception exp){
+        } catch (Exception exp) {
             System.out.println(exp.getLocalizedMessage());
         }
 
@@ -305,15 +302,15 @@ public class Ledger {
     //write to csv file
     //this can be used for deposits and payments
 
-    static void writeToCsvFile(Transactions transaction){
+    static void writeToCsvFile(Transactions transaction) {
 
         try {
             BufferedWriter bufWriter = new BufferedWriter(new FileWriter(filePath, true));
             bufWriter.write("\n");
             bufWriter.write(transaction.toString());
-           // bufWriter.write("\n");
+            // bufWriter.write("\n");
             System.out.println(transaction);
-         //   System.out.println("if we see this we should have successfully added to the csv file");
+            //   System.out.println("if we see this we should have successfully added to the csv file");
 
             bufWriter.close();
 

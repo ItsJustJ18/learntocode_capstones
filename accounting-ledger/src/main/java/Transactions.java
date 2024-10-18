@@ -14,7 +14,6 @@ public class Transactions {
     private Double userAmount;
 
 
-
     public LocalDate getDate() {
         return date;
     }
