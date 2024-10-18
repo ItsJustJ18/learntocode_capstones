@@ -1,4 +1,4 @@
-My Java Project
+Jermaine Eggleston
 
 Java CLI Application-(Accounting Ledger)
 CLI (Command-Line Interface)
@@ -27,3 +27,4 @@ YearUp United Java Development Program
 
 Changelog
 [1.0.0] Initial release
+

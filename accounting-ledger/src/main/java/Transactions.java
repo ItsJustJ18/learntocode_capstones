@@ -70,7 +70,7 @@ public class Transactions {
                 "|" + description +
                 "|" + vendor + "|" + userAmount;
 
-        //2024-10-17|06:30:11|Megan|Rockafella|250
+
     }
 }
 

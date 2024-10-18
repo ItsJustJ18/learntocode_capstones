@@ -28,7 +28,7 @@ public class Ledger {
         //variable chosen as to detect a user
         //to tell the local time when using LocalTime.now
         LocalTime currentTime = LocalTime.now();
-        String filecontents;
+
 
 
 
@@ -48,7 +48,7 @@ public class Ledger {
                     """);
 
             choice = userInput.nextLine();
-            if (choice.equals("D")) {
+            if (choice.equalsIgnoreCase("D")) {
 
                 //user determines how much they would like to deposit into the prompt
                 System.out.println("How much of a deposit are we going to make today? ");
@@ -86,9 +86,9 @@ public class Ledger {
                 allTransactions.add(payTransaction);
             //    System.out.println(allTransactions);
 
-            } else if (choice.equals("P")) {
+            } else if (choice.equalsIgnoreCase("P")) {
                 String statement = "";
-                System.out.println("What would you like to make a payment amount? ");
+                System.out.println("What amount would you like to pay? ");
                 double paymentAmount = userInput.nextDouble();
                 statement = statement + paymentAmount + " | ";
                 userInput.nextLine();
@@ -120,7 +120,7 @@ public class Ledger {
                writeToCsvFile(payTransaction);
 
 
-            } else if (choice.equals("L")) {
+            } else if (choice.equalsIgnoreCase("L")) {
 
                 FileReader ledgerreader = new FileReader(filePath);
                 BufferedReader bufferedReader = new BufferedReader(ledgerreader);
@@ -144,12 +144,12 @@ public class Ledger {
 
                  //   boolean display_return = true;
 
-                    if(choice.equals("A")) {
+                    if(choice.equalsIgnoreCase("A")) {
                         System.out.println("These are the following entries made to your account as of " + LocalTime.now().withNano(0) + " " + now());
                         for(Transactions transaction: allTransactions){
                             System.out.println(transaction);
                         }
-                    } else if (choice.equals("D")) {
+                    } else if (choice.equalsIgnoreCase("D")) {
 
                         System.out.println("Here are all the deposits made so far. ");
 
@@ -160,7 +160,7 @@ public class Ledger {
                         }
 
                         //to do get all listed deposits made in the project
-                    } else if (choice.equals("P")) {
+                    } else if (choice.equalsIgnoreCase("P")) {
                         System.out.println("Here are all the payments you have made so far. ");
 
                         for(Transactions transaction: allTransactions){
@@ -169,12 +169,12 @@ public class Ledger {
                             }
                         }
 
-                    } else if(choice.equals("R")){
+                    } else if(choice.equalsIgnoreCase("R")){
 
                         System.out.println("Reports menu");
                         //reportts menu
                         reportsPage();
-                    } else if (choice.equals("H")) {
+                    } else if (choice.equalsIgnoreCase("H")) {
                        ledger_decision = false;
                        // return;
                     } else {
@@ -183,7 +183,7 @@ public class Ledger {
                     }
                 }
 
-            } else if (choice.equals("X")) {
+            } else if (choice.equalsIgnoreCase("X")) {
 
                 user_choice = false;
 
