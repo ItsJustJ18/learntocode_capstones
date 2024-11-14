@@ -1,12 +1,19 @@
 package EnumClasses;
 
 public enum DrinkFlavor {
-    HI_C,
-    ROOT_BEER,
-    RIG_JUICE,
-    BUTTER_BEER,
-    HEAL_POTION;
+    HI_C(0),
+    ROOT_BEER(0),
+    RIG_JUICE(0),
+    BUTTER_BEER(0),
+    HEAL_POTION(0);
 
-    DrinkFlavor() {
+    private final double price;
+
+    DrinkFlavor(double price) {
+        this.price = price;
+    }
+
+    public double getPrice() {
+        return price;
     }
 }

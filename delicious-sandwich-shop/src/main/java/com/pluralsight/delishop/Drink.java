@@ -1,7 +1,12 @@
 package com.pluralsight.delishop;
 
+import EnumClasses.DrinkFlavor;
+import EnumClasses.DrinkSize;
+
 public class Drink extends Items {
-    String size;
+
+    DrinkSize size;
+    DrinkFlavor flavor;
 
     @Override
     public double getPrice() {
@@ -9,10 +14,11 @@ public class Drink extends Items {
     }
     Drink() {
         switch (size) {
-            case "small" -> price = 2;
-            case "medium" -> price = 2.5;
-            case "large" -> price = 3;
+            case SMALL -> price = 2;
+            case MEDIUM -> price = 2.5;
+            case LARGE -> price = 3;
             default -> System.out.print(" Sorry that size is not recognized. ");
         }
+        System.out.println("$" + size + " " + flavor);
     }
 }

@@ -1,4 +1,5 @@
 package com.pluralsight.delishop;
 
-public class RegularToppings {
+public class RegularToppings extends Topping {
+
 }

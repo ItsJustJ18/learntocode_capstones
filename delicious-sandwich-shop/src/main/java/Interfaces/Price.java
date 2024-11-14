@@ -1,4 +1,4 @@
-package com.pluralsight.delishop;
+package Interfaces;
 
 public interface Price {
 

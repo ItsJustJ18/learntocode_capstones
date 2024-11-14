@@ -20,4 +20,5 @@ public enum RegularToppings {
     public double getPrice() {
         return price;
     }
+
 }
