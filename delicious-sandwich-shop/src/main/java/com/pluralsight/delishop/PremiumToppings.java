@@ -2,11 +2,15 @@ package com.pluralsight.delishop;
 
 import EnumClasses.BreadLength;
 
-public class PremiumToppings extends Topping {
+public abstract class PremiumToppings extends Topping {
 
-    private double price;
+    public double price;
 
+public PremiumToppings(boolean haveExtra, BreadLength breadLength) {
+    super(breadLength, haveExtra);
+}
 
-    }
+    public abstract double getCheesePrice();
+}
 
 

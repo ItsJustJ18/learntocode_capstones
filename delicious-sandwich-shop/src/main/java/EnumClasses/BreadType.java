@@ -1,19 +1,11 @@
 package EnumClasses;
 
 public enum BreadType {
-    WHEAT(0),
-    WHITE(0),
-    RYE(0),
-    WRAP(0);
 
-    final double price;
-
-    BreadType(double price) {
-        this.price = price;
-    }
-
-    public double getPrice() {
-        return price;
-    }
+    //List of breadTypes but set with a final of price of 0 since it has no value
+    WHEAT,
+    WHITE,
+    RYE,
+    WRAP;
 }
 

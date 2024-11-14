@@ -46,4 +46,17 @@ public class CustomerOrder {
     public boolean isSauce() {
         return sauce;
     }
+
+    @Override
+    public String toString() {
+        return "CustomerOrder{" +
+                "customerName='" + customerName + '\'' +
+                ", orderNumber='" + orderNumber + '\'' +
+                ", sandwichForOrder='" + sandwichForOrder + '\'' +
+                ", sandwichSpecial=" + sandwichSpecial +
+                ", drink=" + drink +
+                ", chips=" + chips +
+                ", sauce=" + sauce +
+                '}';
+    }
 }

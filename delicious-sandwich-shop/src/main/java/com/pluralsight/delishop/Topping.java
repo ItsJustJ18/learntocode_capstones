@@ -4,7 +4,7 @@ package com.pluralsight.delishop;
 import EnumClasses.BreadLength;
 
 public class Topping extends Items {
-    private BreadLength breadLength;
+    BreadLength breadLength;
     boolean haveExtraToppings;
 
     public Topping(BreadLength breadLength, boolean haveExtraToppings) {

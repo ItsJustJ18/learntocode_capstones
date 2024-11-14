@@ -80,13 +80,13 @@ public class SandwichApplication {
                     sandwichMakerMenu();
                     break;
 
-//            case "2":
-//                drinkMakerMenu();
-//                break;
+//                case "2":
+//                    drinkMakerMenu();
+//                    break;
 //
-//            case "3":
-//                chipMakerMenu();
-//                break;
+//                case "3":
+//                    chipMakerMenu();
+//                    break;
 
                 case "4":
                     System.out.println(" Ready to checkout? ");
