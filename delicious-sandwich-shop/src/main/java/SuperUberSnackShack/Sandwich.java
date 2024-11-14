@@ -1,22 +1,24 @@
 package SuperUberSnackShack;
 
 import EnumClasses.*;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
-//Class extends to Item to use the getPrice() method (Line 13 in Items Super Class)
 public class Sandwich extends Items {
 
     //instance variables to determine what a sandwich needs to be made
     private BreadLength breadLength;
     private BreadType breadType;
-    private Cheese cheeses;
-    private SuperUberSnackShack.Meat bigMeats;
-    private List<Topping> toppingList;
+    private ArrayList<Cheese> cheeses;
+    private ArrayList<Meat> bigMeats;
+    private ArrayList<Topping> toppingList;
     private SauceFlavor sauceFlavor;
     private SideType sideType;
     private boolean toastedSandwich;
 
-    public Sandwich(BreadLength breadLength, BreadType breadType, Cheese cheeses, SuperUberSnackShack.Meat bigMeats, List<Topping> toppingList, SauceFlavor sauceFlavor, SideType sideType, boolean toastedSandwich) {
+    public Sandwich(BreadLength breadLength, BreadType breadType, ArrayList<Cheese> cheeses, ArrayList<Meat> bigMeats, ArrayList<Topping> toppingList, SauceFlavor sauceFlavor, SideType sideType, boolean toastedSandwich) {
         this.breadLength = breadLength;
         this.breadType = breadType;
         this.cheeses = cheeses;
@@ -27,6 +29,10 @@ public class Sandwich extends Items {
         this.toastedSandwich = toastedSandwich;
     }
 
+    public void addTopping(Topping topping) {
+        Topping.add(topping);
+    }
+
     public BreadLength getBreadLength() {
         return breadLength;
     }
@@ -35,15 +41,15 @@ public class Sandwich extends Items {
         return breadType;
     }
 
-    public Cheese getCheeses() {
+    public ArrayList<Cheese> getCheeses() {
         return cheeses;
     }
 
-    public SuperUberSnackShack.Meat getBigMeats() {
+    public ArrayList<Meat> getBigMeats() {
         return bigMeats;
     }
 
-    public List<Topping> getToppingList() {
+    public ArrayList<Topping> getToppingList() {
         return toppingList;
     }
 
@@ -59,8 +65,10 @@ public class Sandwich extends Items {
         return toastedSandwich;
     }
 
-    //TODO have this class extend or implement towards the order class for it to be made
 //TODO have the order extend out to the ORDER CLASS -> (.addSandwich) on a receipt that will be given to the customer\
 }
-public void
+
+    public void makingSandwich() {
+
+}
 

@@ -1,10 +1,18 @@
-package SuperUberSnackShack;
+package SuperUberSnackShack.Screen;
 
+import EnumClasses.BreadLength;
+import EnumClasses.BreadType;
+import SuperUberSnackShack.Topping;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class SandwichApplication {
 
     private final Scanner user = new Scanner(System.in);
+    private double breadLengthPrice;
+    private List<Topping> toppingsOnSandwich = new ArrayList<>();
 
     public void customerOrderScreen() {
 
@@ -54,7 +62,7 @@ public class SandwichApplication {
 
         boolean orderIsDone = false;
 
-        while (orderIsDone) {
+        while (!orderIsDone) {
             System.out.print("""
                     
                     You have entered the order menu. What would like to add with your order?
@@ -104,6 +112,8 @@ public class SandwichApplication {
 
     public void sandwichMakerMenu() {
 
+        Sandwich superUberSandwich = new Sandwich(BreadLength, BreadType, toppingsOnSandwich, )
+
         boolean sandwichBuilder = true;
 
         while (sandwichBuilder) {
@@ -119,32 +129,57 @@ public class SandwichApplication {
                     3) 12" Inches $8.50
                     
                     """);
+
             String choice = user.nextLine();
 
             switch (choice) {
                 case "1":
                     System.out.println(" You have selected Four (4) Inches ");
-                    sandwichBuilder = false;
+                    System.out.printf("%2s $%4.2f", BreadLength.FOUR_INCHES.getBreadLength(), BreadLength.FOUR_INCHES.getPrice());
                     break;
 
                 case "2":
                     System.out.println(" You have selected Eight (8) Inches ");
-                    sandwichBuilder = false;
+                    System.out.printf("%2s $%4.2f", BreadLength.EIGHT_INCHES.getBreadLength(), BreadLength.EIGHT_INCHES.getPrice());
                     break;
 
                 case "3":
                     System.out.println(" You have selected Twelve (12) Inches");
-                    sandwichBuilder = false;
+                    System.out.printf("%2s $%4.2f", BreadLength.TWELVE_INCHES.getBreadLength(), BreadLength.EIGHT_INCHES.getPrice());
                     break;
 
                 default:
                     System.out.println("Invalid option has been detected. Please pick from the following options. ");
             }
+            return;
         }
     }
-    public void drinkMakerMenu(){
+}
+    public void breadPicker() {
 
+        while (sandwichBuilder) {
+
+            System.out.println("""
+                    Select a Bread of your choosing.
+
+                    1) White
+
+                    2) Wheat
+
+                    3) Rye
+
+                    4) Wrap
+
+                    """);
+            switch (choice) {
+
+                case "1":
+                    System.out.println();
+            }
+        }
     }
 }
+
+
 
 

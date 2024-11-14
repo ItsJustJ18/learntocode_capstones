@@ -1,6 +1,6 @@
 package SuperUberSnackShack;
 
-public class Chips {
+public class Chips extends Items {
 
     private final String chipName;
     private final double price;
@@ -30,7 +30,7 @@ public class Chips {
         CLASSIC("Classic", 1.50),
         SALT_AND_VINEGAR("Salt and Vinegar", 1.50);
 
-        ChipFlavor(String c, double p) {
+        ChipFlavor(String chipName, double price) {
 
         }
     }

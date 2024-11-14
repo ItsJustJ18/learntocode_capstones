@@ -10,5 +10,4 @@ public enum RegularToppings {
     PICKLES,
     GUACAMOLE,
     MUSHROOMS;
-
 }

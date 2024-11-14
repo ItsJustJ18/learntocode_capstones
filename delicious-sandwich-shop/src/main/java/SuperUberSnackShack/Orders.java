@@ -14,7 +14,7 @@ public class Orders {
     }
     //adds item to a list formed by the customer depending on what they select
     public void addOrderItem(Items item) {
-        Items.add(item);
+        itemList.add(item);
     }
 
     //returns totalPrice after getting every item's cost amount
@@ -28,11 +28,11 @@ public class Orders {
     }
     //totalPrice of the Order method
     public double totalPriceOfOrder(){
-        double totalPrice = 0;
+         this.totalOrderPrice = 0;
         for (Items item : itemList) {
-            totalPrice = totalOrderPrice + item.getPrice();
+             totalOrderPrice += item.getPrice();
         }
-        return totalPrice;
+        return totalOrderPrice;
     }
 }
 

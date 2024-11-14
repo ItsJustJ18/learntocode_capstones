@@ -7,7 +7,7 @@ public abstract class Items implements Price {
 
     double price;
 
-    public static void add(Items item) {
+    public static void add(Items itemList) {
 
     }
 
