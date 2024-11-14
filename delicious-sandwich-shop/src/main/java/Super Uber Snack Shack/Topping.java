@@ -3,7 +3,7 @@ package com.pluralsight.delishop;
 
 import EnumClasses.BreadLength;
 
-public class Topping extends Items {
+public class Topping extends com.pluralsight.delishop.Items {
     BreadLength breadLength;
     boolean haveExtraToppings;
 

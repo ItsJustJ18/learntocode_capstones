@@ -1,4 +1,4 @@
-package com.pluralsight.delishop;
+package delishop;
 
 public class Meat extends PremiumToppings{
 

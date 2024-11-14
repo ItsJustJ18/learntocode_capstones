@@ -2,7 +2,7 @@ package com.pluralsight.delishop;
 
 import EnumClasses.DrinkSize;
 
-public class Drink extends Items {
+public class Drink extends com.pluralsight.delishop.Items {
 
     DrinkSize size;
     DrinkFlavor flavor;

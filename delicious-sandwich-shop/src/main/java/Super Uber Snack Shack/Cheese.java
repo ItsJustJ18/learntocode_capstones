@@ -2,7 +2,7 @@ package com.pluralsight.delishop;
 
 import EnumClasses.BreadLength;
 
-public class Cheese extends PremiumToppings {
+public class Cheese extends com.pluralsight.delishop.PremiumToppings {
 
     private Cheese cheeseWanted;
 
