@@ -1,4 +1,4 @@
 package EnumClasses;
 
-public enum Meat {
+public enum SideType {
 }

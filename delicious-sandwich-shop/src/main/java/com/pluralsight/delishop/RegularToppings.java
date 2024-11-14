@@ -1,4 +1,4 @@
 package com.pluralsight.delishop;
 
-public class CustomerOrder {
+public class RegularToppings {
 }

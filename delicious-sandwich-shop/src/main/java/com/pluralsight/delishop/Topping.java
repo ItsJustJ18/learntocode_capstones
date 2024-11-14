@@ -6,6 +6,10 @@ import java.util.Spliterator;
 import java.util.function.Consumer;
 
 public class Toppings extends Items {
+    private Topping toppings;
+    boolean haveExtra;
+
+
 
 }
 //TODO the SUPER CLASS that the Premium and Regular toppings are going to extend to
