@@ -1,4 +1,4 @@
-package com.pluralsight.delishop;
+package SuperUberSnackShack;
 
 public class Chips {
 
@@ -30,7 +30,7 @@ public class Chips {
         CLASSIC("Classic", 1.50),
         SALT_AND_VINEGAR("Salt and Vinegar", 1.50);
 
-        ChipFlavor(String s, double v) {
+        ChipFlavor(String c, double p) {
 
         }
     }

@@ -1,4 +1,4 @@
-package com.pluralsight.delishop;
+package SuperUberSnackShack;
 
 import java.util.Scanner;
 
@@ -140,9 +140,10 @@ public class SandwichApplication {
                 default:
                     System.out.println("Invalid option has been detected. Please pick from the following options. ");
             }
-
-
         }
+    }
+    public void drinkMakerMenu(){
+
     }
 }
 

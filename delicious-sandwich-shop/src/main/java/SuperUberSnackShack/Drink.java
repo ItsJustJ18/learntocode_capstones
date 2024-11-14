@@ -1,8 +1,8 @@
-package com.pluralsight.delishop;
+package SuperUberSnackShack;
 
 import EnumClasses.DrinkSize;
 
-public class Drink extends com.pluralsight.delishop.Items {
+public class Drink extends Items {
 
     DrinkSize size;
     DrinkFlavor flavor;

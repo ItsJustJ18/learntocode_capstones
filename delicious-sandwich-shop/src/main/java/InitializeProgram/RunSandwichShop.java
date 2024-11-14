@@ -1,6 +1,6 @@
 package InitializeProgram;
 
-import com.pluralsight.delishop.SandwichApplication;
+import SuperUberSnackShack.SandwichApplication;
 
 public class RunSandwichShop {
 

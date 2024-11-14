@@ -1,24 +1,22 @@
-package com.pluralsight.delishop;
+package SuperUberSnackShack;
 
 import EnumClasses.*;
-
-
 import java.util.List;
 
 //Class extends to Item to use the getPrice() method (Line 13 in Items Super Class)
-public class Sandwich extends com.pluralsight.delishop.Items {
+public class Sandwich extends Items {
 
     //instance variables to determine what a sandwich needs to be made
     private BreadLength breadLength;
     private BreadType breadType;
-    private com.pluralsight.delishop.Cheese cheeses;
-    private Meat bigMeats;
-    private List<com.pluralsight.delishop.Topping> toppingList;
+    private Cheese cheeses;
+    private SuperUberSnackShack.Meat bigMeats;
+    private List<Topping> toppingList;
     private SauceFlavor sauceFlavor;
     private SideType sideType;
     private boolean toastedSandwich;
 
-    public Sandwich(BreadLength breadLength, BreadType breadType, com.pluralsight.delishop.Cheese cheeses, Meat bigMeats, List<com.pluralsight.delishop.Topping> toppingList, SauceFlavor sauceFlavor, SideType sideType, boolean toastedSandwich) {
+    public Sandwich(BreadLength breadLength, BreadType breadType, Cheese cheeses, SuperUberSnackShack.Meat bigMeats, List<Topping> toppingList, SauceFlavor sauceFlavor, SideType sideType, boolean toastedSandwich) {
         this.breadLength = breadLength;
         this.breadType = breadType;
         this.cheeses = cheeses;
@@ -37,15 +35,15 @@ public class Sandwich extends com.pluralsight.delishop.Items {
         return breadType;
     }
 
-    public com.pluralsight.delishop.Cheese getCheeses() {
+    public Cheese getCheeses() {
         return cheeses;
     }
 
-    public Meat getBigMeats() {
+    public SuperUberSnackShack.Meat getBigMeats() {
         return bigMeats;
     }
 
-    public List<com.pluralsight.delishop.Topping> getToppingList() {
+    public List<Topping> getToppingList() {
         return toppingList;
     }
 
@@ -63,6 +61,6 @@ public class Sandwich extends com.pluralsight.delishop.Items {
 
     //TODO have this class extend or implement towards the order class for it to be made
 //TODO have the order extend out to the ORDER CLASS -> (.addSandwich) on a receipt that will be given to the customer\
-
-
 }
+public void
+

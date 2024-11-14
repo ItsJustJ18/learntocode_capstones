@@ -1,4 +1,4 @@
-package com.pluralsight.delishop;
+package SuperUberSnackShack;
 
 public class CustomerOrder {
     String customerName;

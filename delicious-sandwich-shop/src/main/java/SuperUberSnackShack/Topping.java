@@ -1,9 +1,9 @@
-package com.pluralsight.delishop;
+package SuperUberSnackShack;
 
 
 import EnumClasses.BreadLength;
 
-public class Topping extends com.pluralsight.delishop.Items {
+public class Topping extends Items {
     BreadLength breadLength;
     boolean haveExtraToppings;
 
