@@ -2,6 +2,9 @@ DEL-ICIOUS SANDWICH SHOP
 
 The project is designed as a capstone project for the LearnToCode series and demonstrates the usage of object-oriented programming concepts in Java, including classes, enums, constructors, and methods. Being able to make a sandwhich with many components, drink, and chips. With that it will be added to orders and add a sum of what is needed to complete a customer's receipt.
 
+![super-uber-snack-shack-diagram](https://github.com/user-attachments/assets/fcbe2ebb-b2af-42b7-ab4d-ef363aa6a6d1)
+
+
 Features
 Customizable Sandwiches: Users can select from a variety of bread types, bread lengths, meats, cheeses, toppings, sauces, and sides.
 Prices are calculated by either a hard code implemented with the class itself or made depending on what the sizes of small, medium, or large.
