@@ -15,6 +15,11 @@ public class Meat extends SandwichMeat {
         return meatWanted;
     }
 
+    @Override
+    public double getMeatPrice() {
+        return super.getMeatPrice();
+    }
+
     public String toString() {
         return "$" + price + " " + meatWanted;
     }

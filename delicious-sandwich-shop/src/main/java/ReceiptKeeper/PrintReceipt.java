@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter;
 public class PrintReceipt {
     public static void makeReceipt(Orders customerOrder) {
         LocalDateTime currentDateAndTime = LocalDateTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd-hhmmss");
 
         try {
             FileWriter fileWriter = new FileWriter("src/main/resources/CopyOfReceipt" + currentDateAndTime.format(formatter) + ".txt");

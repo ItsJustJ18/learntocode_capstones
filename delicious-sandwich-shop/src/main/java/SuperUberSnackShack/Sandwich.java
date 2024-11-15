@@ -4,11 +4,10 @@ import EnumClasses.BreadLength;
 import EnumClasses.BreadType;
 import EnumClasses.SauceFlavor;
 import EnumClasses.SideType;
-
+import Interfaces.Price;
 import java.util.ArrayList;
-import java.util.List;
 
-public class Sandwich extends Items {
+public class Sandwich extends Items implements Price {
 
     //instance variables to determine what a sandwich needs to be made
     private BreadLength breadLength;
@@ -30,10 +29,12 @@ public class Sandwich extends Items {
         this.sideType = sideType;
         this.toastedSandwich = toastedSandwich;
     }
+
     public Sandwich() {
 
     }
-    public void removeTopping (Topping topping){
+
+    public void removeTopping(Topping topping) {
         this.toppingList.remove(topping);
     }
 
@@ -103,20 +104,6 @@ public class Sandwich extends Items {
 
     public void setToastedSandwich(boolean toastedSandwich) {
         this.toastedSandwich = toastedSandwich;
-    }
-    private void sandwichList(List<Sandwich> sandwichArrayList) {
-    String breadLength = "BreadLength";
-    String breadType = "Bread";
-    String cheeseType = "Cheese(s)";
-    String meatType = "Meat(s)";
-    String toppings = "Topping(s)";
-    String sauce = "Sauce Flavor";
-    String side = "Side";
-        System.out.printf("%3s\n %3s\n %3s\n %3s\n %3s\n %3s\n %3s\n %3s\n", breadLength, breadType, cheeseType, meatType, toppings, sauce, side, toastedSandwich);
-        for (Sandwich sandwich : sandwichArrayList) {
-
-            System.out.printf("%3s\n %3s\n %3s\n %3s\n %3s\n %3s\n %3s\n %3s\n", sandwich.getBreadLength(), sandwich.getBreadType(), sandwich.getCheeses(), sandwich.getBigMeats(), sandwich.getToppingList(), sandwich.getSauceFlavor(), sandwich.getSideType());
-        }
     }
 
 }

@@ -7,7 +7,7 @@ public class Drink extends Items {
     DrinkSize size;
     DrinkFlavor flavor;
 
-    private Drink() {
+    public Drink() {
         switch (size) {
             case SMALL -> price = 2.00;
             case MEDIUM -> price = 2.50;
