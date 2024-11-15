@@ -39,29 +39,47 @@ The program will create sample sandwiches and print the details as follows:
 Receipt: For Order
 
 Sandwich: 
+
 Bread Length: MEDIUM
+
 Bread Type: WHEAT
+
 Cheese: CHEDDAR
+
 Meat: BEEF
+
 Toppings: [LETTUCE, TOMATO]
+
 Sauce: MAYO
+
 Side: PEPPER FLAKES
+
 Toasted: Yes
-Price: $8.50
+
+Price: Sandwich.getPrice();
 
 Sandwich: 
 
 Bread Length: LARGE
+
 Bread Type: RYE
+
 Cheese: SWISS
+
 Meat: CHICKEN
+
 Toppings: [PICKLE]
+
 Sauce: KETCHUP
-Side: CHIPS
+
+Side: PEPPER
+
 Toasted: No
-Price: $10.25
+
+Price: Sandwich.getPrice();
 
 Customizing Sandwiches
+
 The program lets you customize your sandwich with different options for:
 
 Bread Type: (White, Wheat, Rye, etc...)
