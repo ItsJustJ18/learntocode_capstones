@@ -2,7 +2,7 @@ package EnumClasses;
 
 public enum BreadType {
 
-    //List of breadTypes but set with a final of price of 0 since it has no value
+    //List of breadTypes
     WHEAT,
     WHITE,
     RYE,

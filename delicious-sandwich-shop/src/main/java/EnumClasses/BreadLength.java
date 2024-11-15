@@ -15,10 +15,11 @@ public enum BreadLength {
         this.breadLength = breadLength;
         this.price = price;
     }
+    //Get Price method that returns a double data type
     public double getPrice() {
         return price;
     }
-
+    //Retrieves breadLength and uses parameters above with it to help with calculations
     public String getBreadLength() {
         return breadLength;
     }
