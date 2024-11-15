@@ -3,6 +3,7 @@ package SuperUberSnackShack.Screen;
 import EnumClasses.*;
 import EnumClasses.RegularToppings;
 import SuperUberSnackShack.*;
+
 import java.util.Scanner;
 
 public class SandwichApplication {
@@ -700,9 +701,7 @@ public class SandwichApplication {
                     break;
 
             }
-
         }
-
     }
 
     public void drinkMakerMenu() {
@@ -763,6 +762,7 @@ public class SandwichApplication {
         }
 
     }
+
     public void drinkFlavorPicker() {
 
         boolean pickingFlavor = true;

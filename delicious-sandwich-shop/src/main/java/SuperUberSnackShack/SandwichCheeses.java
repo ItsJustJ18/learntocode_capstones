@@ -7,6 +7,7 @@ public class SandwichCheeses extends PremiumToppings {
         super(haveExtra, breadLength);
     }
 
+    //cheese price is adjusted according to each size and if they want extra
     public double getCheesePrice() {
         if (breadLength == BreadLength.FOUR_INCHES) {
             price = .75;

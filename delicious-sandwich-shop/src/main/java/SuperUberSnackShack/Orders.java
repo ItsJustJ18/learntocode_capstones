@@ -8,7 +8,7 @@ public class Orders {
     private double totalOrderPrice;
     private ArrayList<Items> itemList;
 
-    public Orders(double totalOrderPrice, ArrayList<Items> itemList) {
+    public Orders() {
         this.totalOrderPrice = totalOrderPrice;
         this.itemList = new ArrayList<>();
     }

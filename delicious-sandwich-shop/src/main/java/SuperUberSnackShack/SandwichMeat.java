@@ -7,6 +7,8 @@ public class SandwichMeat extends PremiumToppings {
         super(haveExtra, breadLength);
     }
 
+    //hard code the prices for each bread length and if user wants extra meat
+    //inside a recursive loop
     public double getMeatPrice() {
         if (breadLength == BreadLength.FOUR_INCHES) {
             price = 1.00;
