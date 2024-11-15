@@ -55,8 +55,8 @@ Bread Length: LARGE
 Bread Type: RYE
 Cheese: SWISS
 Meat: CHICKEN
-Toppings: [PICKLE, BACON]
-Sauce: BBQ
+Toppings: [PICKLE]
+Sauce: KETCHUP
 Side: CHIPS
 Toasted: No
 Price: $10.25
@@ -65,12 +65,19 @@ Customizing Sandwiches
 The program lets you customize your sandwich with different options for:
 
 Bread Type: (White, Wheat, Rye, etc...)
+
 Bread Length: (Small, Medium, Large)
+
 Cheese: (Cheddar, Swiss, American, etc...)
+
 Meat: (Beef, Chicken, Ham, etc...)
+
 Toppings: (Lettuce, Tomato, Onion, Pickle, etc..)
+
 Sauce: (Mayo, Mustard, BBQ, Ranch etc...)
+
 Side: (Salt, Pepper etc...)
+
 Toasted Option: Choose whether the sandwich should be toasted.
 
 Receipt Output
