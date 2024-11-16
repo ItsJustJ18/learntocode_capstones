@@ -28,6 +28,7 @@ Installation
 Clone the Repository: If you have Git installed, you can clone the repository to your local machine.
 
 GitHub repository link for Command Prompt: git clone https://github.com/ItsJustJ18/learntocode_capstones.git
+Then git clone again to the delicious-sandwich-shop repository
 
 Run the Program: In the Initialize Program package -> RunSandwichShop
 
