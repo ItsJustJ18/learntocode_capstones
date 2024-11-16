@@ -1,4 +1,4 @@
-# **DEL-ICIOUS SANDWICH SHOP**
+# **DELI-CIOUS SANDWICH SHOP**
 
 The project is designed as a capstone project for the LearnToCode series and demonstrates the usage of object-oriented programming concepts in Java, including classes, enums, constructors, and methods. Being able to make a sandwhich with many components, drink, and chips. With that it will be added to orders and add a sum of what is needed to complete a customer's receipt.
 
