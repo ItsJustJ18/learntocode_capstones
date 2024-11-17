@@ -2,7 +2,6 @@ package SuperUberSnackShack;
 
 import EnumClasses.BreadLength;
 import EnumClasses.BreadType;
-import EnumClasses.RegularToppings;
 import EnumClasses.SauceFlavor;
 import EnumClasses.SideType;
 import Interfaces.Price;
@@ -31,7 +30,7 @@ public class Sandwich extends Items implements Price {
         this.toastedSandwich = toastedSandwich;
     }
 
-    public Sandwich(BreadLength breadLength, BreadType breadType, Meat.Meats meatType, Cheese.CheeseType cheeseType, RegularToppings regularToppings, SauceFlavor sauceFlavor, SideType sideType) {
+    public Sandwich() {
 
     }
 
@@ -83,15 +82,15 @@ public class Sandwich extends Items implements Price {
         this.breadType = breadType;
     }
 
-    public void setCheeses(Cheese.CheeseType cheeses) {
+    public void setCheeses(ArrayList<Cheese> cheeses) {
         this.cheeses = cheeses;
     }
 
-    public void setBigMeats(Meat.Meats bigMeats) {
+    public void setBigMeats(ArrayList<Meat> bigMeats) {
         this.bigMeats = bigMeats;
     }
 
-    public void setToppingList(RegularToppings toppingList) {
+    public void setToppingList(ArrayList<Topping> toppingList) {
         this.toppingList = toppingList;
     }
 

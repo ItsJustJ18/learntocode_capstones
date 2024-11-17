@@ -8,19 +8,6 @@ public class Drink extends Items implements Price {
     DrinkSize size;
     DrinkFlavor flavor;
 
-    public Drink(DrinkSize size, DrinkFlavor flavor) {
-        this.size = size;
-        this.flavor = flavor;
-    }
-
-    public void setSize(DrinkSize size) {
-        this.size = size;
-    }
-
-    public void setFlavor(DrinkFlavor flavor) {
-        this.flavor = flavor;
-    }
-
     public Drink() {
         //provides the switch case based on the size the user picks and the price correlated with it
         switch (size) {
