@@ -1,19 +1,19 @@
 package SuperUberSnackShack;
 
+import java.util.Scanner;
+
 //chips extends to the Items superclass
 public class Chips extends Items {
 
-    //sets the price and chipName as not changable with final keyword
-    private final String chipName;
-    private final double price;
+    //sets the price and chipName as not changeable with final keyword
+    private final ChipFlavor chipName;
+    private final double PRICE = 1.50;
 
-    Chips(String chipName, double price) {
+    public Chips(ChipFlavor chipName) {
         this.chipName = chipName;
-        this.price = price;
     }
 
-    //return the chipName of the Chip
-    public String getChipName() {
+    public ChipFlavor getChipName() {
         return chipName;
     }
 
@@ -30,13 +30,13 @@ public class Chips extends Items {
 
     //Hard set data types and list of chips that are going to be in the shop
     public enum ChipFlavor {
-        BBQ("BBQ", 1.50),
-        SOUR_CREAM_AND_ONION("Sour Cream and Onion", 1.50),
-        HONEY_BUTTER("Honey Butter", 1.50),
-        CLASSIC("Classic", 1.50),
-        SALT_AND_VINEGAR("Salt and Vinegar", 1.50);
+        BBQ("BBQ"),
+        SOUR_CREAM_AND_ONION("Sour Cream and Onion"),
+        HONEY_BUTTER("Honey Butter"),
+        CLASSIC("Classic"),
+        SALT_AND_VINEGAR("Salt and Vinegar");
 
-        ChipFlavor(String chipName, double price) {
+        ChipFlavor(String chipName) {
 
         }
     }

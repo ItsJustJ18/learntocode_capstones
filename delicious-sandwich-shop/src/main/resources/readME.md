@@ -118,7 +118,7 @@ To add more bread types, cheese, meats, or toppings, you can modify the correspo
 
 Modifying Price Calculation: Based on bread length, certain prices will be able to change. Drinks are the same as well, but chips are hard coded since they are basically all the same while drinks changes price based on the size
 
-More Features
+## More Features
 
 Custom Ingredient Quantities: Allow users to specify how many of each topping they want (e.g., extra cheese, double meat).
 Order History: Implement functionality to save and display past orders.
@@ -127,6 +127,8 @@ License
 This project is open-source
 
 Author: Jermaine Eggleston (ItsJustJ18)
+
+## Images
 
 ![Screenshot 2024-11-15 090035](https://github.com/user-attachments/assets/88d87bc4-c716-48a6-8449-d921bddb6e08)
 ![Screenshot 2024-11-15 090303](https://github.com/user-attachments/assets/d5cb3dde-b790-41fa-8584-707dd8125fcf)

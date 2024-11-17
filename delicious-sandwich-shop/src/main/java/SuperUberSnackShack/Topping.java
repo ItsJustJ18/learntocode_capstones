@@ -8,6 +8,7 @@ public class Topping extends Items {
     BreadLength breadLength;
     boolean haveExtraToppings;
 
+
     public Topping(BreadLength breadLength, boolean haveExtraToppings) {
         this.breadLength = breadLength;
         this.haveExtraToppings = haveExtraToppings;

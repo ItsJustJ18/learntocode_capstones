@@ -1,14 +1,19 @@
-package SuperUberSnackShack.Screen;
+package SuperUberSnackShack.UserInterface;
 
 import EnumClasses.*;
 import EnumClasses.RegularToppings;
+import ReceiptKeeper.PrintReceipt;
 import SuperUberSnackShack.*;
 
 import java.util.Scanner;
 
+import static ScreenMethods.SandwichApplicationMethods.*;
+
 public class SandwichApplication {
 
     private final Scanner user = new Scanner(System.in);
+
+    Orders orders = new Orders();
 
     public void customerOrderScreen() {
 
@@ -108,7 +113,7 @@ public class SandwichApplication {
 
                 case "6":
                     System.out.println(" Order has been removed. ");
-                    createOrderMenu();
+
                     break;
 
                 case "7":
@@ -132,6 +137,8 @@ public class SandwichApplication {
         System.out.println(" Ready to checkout? Select y for yes and n for no. ");
 
         if (userLeaves.equalsIgnoreCase("y")) {
+            userLeaves.matches("y");
+            PrintReceipt.makeReceipt(orders);
 
             System.out.println("Here's your order and have a nice day!");
 
@@ -141,9 +148,9 @@ public class SandwichApplication {
 
     }
 
-    public void sandwichMakerMenu() {
+    public void sandwichMakerMenu(BreadLength breadLength, BreadType breadType, Meat.Meats meatType, Cheese.CheeseType cheeseType, RegularToppings regularToppings, SauceFlavor sauceFlavor, SideType sideType) {
 
-        Sandwich superUberSandwich = new Sandwich();
+        Sandwich superUberSandwich = new Sandwich(breadLength, breadType, meatType, cheeseType, regularToppings, sauceFlavor, sideType);
 
         boolean sandwichBuilder = true;
 
@@ -169,19 +176,22 @@ public class SandwichApplication {
                 case "1":
                     System.out.println(" You have selected Four (4) Inches ");
                     System.out.printf("%2s $%4.2f", BreadLength.FOUR_INCHES.getBreadLength(), BreadLength.FOUR_INCHES.getPrice());
-                    breadPicker();
+                    superUberSandwich.setBreadLength(BreadLength.FOUR_INCHES);
+                    breadPicker(superUberSandwich);
                     break;
 
                 case "2":
                     System.out.println(" You have selected Eight (8) Inches ");
                     System.out.printf("%2s $%4.2f", BreadLength.EIGHT_INCHES.getBreadLength(), BreadLength.EIGHT_INCHES.getPrice());
-                    breadPicker();
+                    superUberSandwich.setBreadLength(BreadLength.EIGHT_INCHES);
+                    breadPicker(superUberSandwich);
                     break;
 
                 case "3":
                     System.out.println(" You have selected Twelve (12) Inches");
                     System.out.printf("%2s $%4.2f", BreadLength.TWELVE_INCHES.getBreadLength(), BreadLength.TWELVE_INCHES.getPrice());
-                    breadPicker();
+                    superUberSandwich.setBreadLength(BreadLength.TWELVE_INCHES);
+                    breadPicker(superUberSandwich);
                     break;
 
                 case "4":
@@ -196,7 +206,7 @@ public class SandwichApplication {
         }
     }
 
-    public void breadPicker() {
+    public void breadPicker(Sandwich superUberSandwich) {
 
         boolean breadPicked = false;
 
@@ -222,28 +232,33 @@ public class SandwichApplication {
             String breadPick = user.nextLine();
 
             switch (breadPick) {
+
                 case "1":
                     System.out.println(" You have selected White bread. ");
                     System.out.println(BreadType.WHITE + " FREE ");
-                    pickTheCheese();
+                    superUberSandwich.setBreadType(BreadType.WHITE);
+                    pickTheCheese(superUberSandwich);
                     break;
 
                 case "2":
                     System.out.println(" You have selected Wheat bread.");
                     System.out.println(BreadType.WHEAT + " FREE ");
-                    pickTheCheese();
+                    superUberSandwich.setBreadType(BreadType.WHEAT);
+                    pickTheCheese(superUberSandwich);
                     break;
 
                 case "3":
                     System.out.println(" You have selected Rye bread. ");
                     System.out.println(BreadType.RYE + " FREE ");
-                    pickTheCheese();
+                    superUberSandwich.setBreadType(BreadType.RYE);
+                    pickTheCheese(superUberSandwich);
                     break;
 
                 case "4":
                     System.out.println(" You have selected Wrap style. ");
                     System.out.println(BreadType.WRAP + " FREE ");
-                    pickTheCheese();
+                    superUberSandwich.setBreadType(BreadType.WRAP);
+                    pickTheCheese(superUberSandwich);
                     break;
 
                 case "5":
@@ -261,7 +276,7 @@ public class SandwichApplication {
 
     }
 
-    public void pickTheCheese() {
+    public void pickTheCheese(Sandwich superUberSandwich) {
 
         boolean cheesePicked = false;
 
@@ -293,30 +308,34 @@ public class SandwichApplication {
                 case "1":
                     System.out.println(" You have selected American Cheese. ");
                     System.out.println(Cheese.CheeseType.AMERICAN);
-                    meatPickerMenu();
+                    superUberSandwich.setCheeses(Cheese.CheeseType.AMERICAN);
+                    meatPickerMenu(superUberSandwich);
                     break;
 
                 case "2":
                     System.out.println(" You have selected Provolone Cheese. ");
                     System.out.println(Cheese.CheeseType.PROVOLONE);
-                    meatPickerMenu();
+                    superUberSandwich.setCheeses(Cheese.CheeseType.PROVOLONE);
+                    meatPickerMenu(superUberSandwich);
                     break;
 
                 case "3":
                     System.out.println(" You have selected Cheddar Cheese. ");
                     System.out.println(Cheese.CheeseType.CHEDDAR);
-                    meatPickerMenu();
+                    superUberSandwich.setCheeses(Cheese.CheeseType.CHEDDAR);
+                    meatPickerMenu(superUberSandwich);
                     break;
 
                 case "4":
                     System.out.println(" You have selected Swiss Cheese. ");
                     System.out.println(Cheese.CheeseType.SWISS);
-                    meatPickerMenu();
+                    superUberSandwich.setCheeses(Cheese.CheeseType.SWISS);
+                    meatPickerMenu(superUberSandwich);
                     break;
 
                 case "5":
                     System.out.println(" You have selected no Cheese. ");
-                    meatPickerMenu();
+                    meatPickerMenu(superUberSandwich);
 
 
                 case "6":
@@ -333,7 +352,7 @@ public class SandwichApplication {
 
     }
 
-    public void meatPickerMenu() {
+    public void meatPickerMenu(Sandwich superUberSandwich) {
 
         boolean meatPicked = false;
 
@@ -360,48 +379,55 @@ public class SandwichApplication {
                     
                     
                     """);
+
             String meatPicker = user.nextLine();
 
             switch (meatPicker) {
 
                 case "1":
-                    System.out.println(" You have selected American Cheese. ");
+                    System.out.println(" You have selected Steak. ");
                     System.out.println(Meat.Meats.STEAK);
-                    regularToppingMenu();
+                    superUberSandwich.setBigMeats(Meat.Meats.STEAK);
+                    regularToppingMenu(superUberSandwich);
                     break;
 
                 case "2":
-                    System.out.println(" You have selected Provolone Cheese. ");
+                    System.out.println(" You have selected Ham. ");
                     System.out.println(Meat.Meats.HAM);
-                    regularToppingMenu();
+                    superUberSandwich.setBigMeats(Meat.Meats.HAM);
+                    regularToppingMenu(superUberSandwich);
                     break;
 
                 case "3":
-                    System.out.println(" You have selected Cheddar Cheese. ");
+                    System.out.println(" You have selected Salami. ");
                     System.out.println(Meat.Meats.SALAMI);
-                    regularToppingMenu();
+                    superUberSandwich.setBigMeats(Meat.Meats.SALAMI);
+                    regularToppingMenu(superUberSandwich);
                     break;
 
                 case "4":
-                    System.out.println(" You have selected Swiss Cheese. ");
+                    System.out.println(" You have selected Roast Beef. ");
                     System.out.println(Meat.Meats.ROAST_BEEF);
-                    regularToppingMenu();
+                    superUberSandwich.setBigMeats(Meat.Meats.ROAST_BEEF);
+                    regularToppingMenu(superUberSandwich);
                     break;
 
                 case "5":
                     System.out.println(" You have selected Chicken. ");
                     System.out.println(Meat.Meats.CHICKEN);
-                    regularToppingMenu();
+                    superUberSandwich.setBigMeats(Meat.Meats.CHICKEN);
+                    regularToppingMenu(superUberSandwich);
 
 
                 case "6":
                     System.out.println(" You have selected Bacon. ");
                     System.out.println(Meat.Meats.BACON);
-                    regularToppingMenu();
+                    superUberSandwich.setBigMeats(Meat.Meats.BACON);
+                    regularToppingMenu(superUberSandwich);
 
                 case "7":
                     System.out.println(" You have selected no Meat. ");
-                    regularToppingMenu();
+                    regularToppingMenu(superUberSandwich);
 
                 case "8":
                     System.out.println("Order has been cancelled. ");
@@ -417,7 +443,7 @@ public class SandwichApplication {
         }
     }
 
-    public void regularToppingMenu() {
+    public void regularToppingMenu(Sandwich superUberSandwich) {
 
         boolean regularToppingPicked = false;
 
@@ -457,61 +483,70 @@ public class SandwichApplication {
                 case "1":
                     System.out.println(" You have selected Lettuce. ");
                     System.out.println(RegularToppings.LETTUCE);
-                    sauceMenu();
+                    superUberSandwich.setToppingList(RegularToppings.LETTUCE);
+                    sauceMenu(superUberSandwich);
                     break;
 
                 case "2":
                     System.out.println(" You have selected Peppers. ");
                     System.out.println(RegularToppings.PEPPERS);
-                    sauceMenu();
+                    superUberSandwich.setToppingList(RegularToppings.PEPPERS);
+                    sauceMenu(superUberSandwich);
                     break;
 
                 case "3":
                     System.out.println(" You have selected Onions. ");
                     System.out.println(RegularToppings.ONIONS);
-                    sauceMenu();
+                    superUberSandwich.setToppingList(RegularToppings.ONIONS);
+                    sauceMenu(superUberSandwich);
                     break;
 
                 case "4":
                     System.out.println(" You have selected Tomatoes. ");
                     System.out.println(RegularToppings.TOMATOES);
-                    sauceMenu();
+                    superUberSandwich.setToppingList(RegularToppings.TOMATOES);
+                    sauceMenu(superUberSandwich);
                     break;
 
                 case "5":
                     System.out.println(" You have selected Jalepenos. ");
                     System.out.println(RegularToppings.JALEPENOS);
-                    sauceMenu();
+                    superUberSandwich.setToppingList(RegularToppings.JALEPENOS);
+                    sauceMenu(superUberSandwich);
                     break;
 
 
                 case "6":
                     System.out.println(" You have selected Cucumbers. ");
                     System.out.println(RegularToppings.CUCUMBERS);
-                    sauceMenu();
+                    superUberSandwich.setToppingList(RegularToppings.CUCUMBERS);
+                    sauceMenu(superUberSandwich);
                     break;
 
                 case "7":
                     System.out.println(" You have selected Pickles. ");
                     System.out.println(RegularToppings.PICKLES);
-                    sauceMenu();
+                    superUberSandwich.setToppingList(RegularToppings.PICKLES);
+                    sauceMenu(superUberSandwich);
                     break;
 
                 case "8":
                     System.out.println(" You have selected Guacamole. ");
                     System.out.println(RegularToppings.GUACAMOLE);
-                    sauceMenu();
+                    superUberSandwich.setToppingList(RegularToppings.GUACAMOLE);
+                    sauceMenu(superUberSandwich);
                     break;
 
                 case "9":
                     System.out.println(" You have selected Pickles. ");
                     System.out.println(RegularToppings.MUSHROOMS);
-                    sauceMenu();
+                    superUberSandwich.setToppingList(RegularToppings.MUSHROOMS);
+                    sauceMenu(superUberSandwich);
                     break;
 
                 case "10":
                     System.out.println(" You have selected no Toppings. ");
-                    sauceMenu();
+                    sauceMenu(superUberSandwich);
                     break;
 
                 case "11":
@@ -527,7 +562,7 @@ public class SandwichApplication {
         }
     }
 
-    public void sauceMenu() {
+    public void sauceMenu(Sandwich superUberSandwich) {
 
         boolean saucePicked = false;
 
@@ -561,68 +596,77 @@ public class SandwichApplication {
                     
                     """);
 
-            String toppingPicker = user.nextLine();
+            String saucePicker = user.nextLine();
 
-            switch (toppingPicker) {
+            switch (saucePicker) {
 
                 case "1":
                     System.out.println(" You have selected Krabby Patty Formula. ");
                     System.out.println(SauceFlavor.KRABBY_PATTY_FORMULA);
-                    sideMenu();
+                    superUberSandwich.setSauceFlavor(SauceFlavor.KRABBY_PATTY_FORMULA);
+                    sideMenu(superUberSandwich);
                     break;
 
                 case "2":
                     System.out.println(" You have selected Au Jus. ");
                     System.out.println(SauceFlavor.AU_JUS);
-                    sideMenu();
+                    superUberSandwich.setSauceFlavor(SauceFlavor.AU_JUS);
+                    sideMenu(superUberSandwich);
                     break;
 
                 case "3":
-                    System.out.println(" You have selected Onions. ");
+                    System.out.println(" You have selected World Spiciest Hot Sauce. ");
                     System.out.println(SauceFlavor.WORLDS_SPICIEST_HOT_SAUCE);
-                    sideMenu();
+                    superUberSandwich.setSauceFlavor(SauceFlavor.WORLDS_SPICIEST_HOT_SAUCE);
+                    sideMenu(superUberSandwich);
                     break;
 
                 case "4":
-                    System.out.println(" You have selected Tomatoes. ");
+                    System.out.println(" You have selected Mayo. ");
                     System.out.println(SauceFlavor.MAYO);
-                    sideMenu();
+                    superUberSandwich.setSauceFlavor(SauceFlavor.MAYO);
+                    sideMenu(superUberSandwich);
                     break;
 
                 case "5":
-                    System.out.println(" You have selected Jalepenos. ");
+                    System.out.println(" You have selected Mustard. ");
                     System.out.println(SauceFlavor.MUSTARD);
-                    sideMenu();
+                    superUberSandwich.setSauceFlavor(SauceFlavor.MUSTARD);
+                    sideMenu(superUberSandwich);
                     break;
 
 
                 case "6":
-                    System.out.println(" You have selected Cucumbers. ");
+                    System.out.println(" You have selected Ketchup. ");
                     System.out.println(SauceFlavor.KETCHUP);
-                    sideMenu();
+                    superUberSandwich.setSauceFlavor(SauceFlavor.KETCHUP);
+                    sideMenu(superUberSandwich);
                     break;
 
                 case "7":
-                    System.out.println(" You have selected Pickles. ");
+                    System.out.println(" You have selected Ranch. ");
                     System.out.println(SauceFlavor.RANCH);
-                    sideMenu();
+                    superUberSandwich.setSauceFlavor(SauceFlavor.RANCH);
+                    sideMenu(superUberSandwich);
                     break;
 
                 case "8":
-                    System.out.println(" You have selected Guacamole. ");
+                    System.out.println(" You have selected Thousand Island. ");
                     System.out.println(SauceFlavor.THOUSAND_ISLAND);
-                    sideMenu();
+                    superUberSandwich.setSauceFlavor(SauceFlavor.THOUSAND_ISLAND);
+                    sideMenu(superUberSandwich);
                     break;
 
                 case "9":
-                    System.out.println(" You have selected Pickles. ");
+                    System.out.println(" You have selected Vinaigrette. ");
                     System.out.println(SauceFlavor.VINAIGRETTE);
-                    sideMenu();
+                    superUberSandwich.setSauceFlavor(SauceFlavor.VINAIGRETTE);
+                    sideMenu(superUberSandwich);
                     break;
 
                 case "10":
                     System.out.println(" You have selected no Sauce. ");
-                    sideMenu();
+                    sideMenu(superUberSandwich);
                     break;
 
                 case "11":
@@ -639,7 +683,7 @@ public class SandwichApplication {
         }
     }
 
-    public void sideMenu() {
+    public void sideMenu(Sandwich superUberSandwich) {
 
         boolean sidePicked = false;
 
@@ -668,19 +712,21 @@ public class SandwichApplication {
                 case "1":
                     System.out.println(" You have selected Salt. ");
                     System.out.println(SideType.SALT);
+                    superUberSandwich.setSideType(SideType.SALT);
                     createOrderMenu();
-                    sauceMenu();
                     break;
 
                 case "2":
                     System.out.println(" You have selected Pepper. ");
                     System.out.println(SideType.PEPPER);
+                    superUberSandwich.setSideType(SideType.PEPPER);
                     createOrderMenu();
                     break;
 
                 case "3":
                     System.out.println(" You have selected Pepper Flakes. ");
                     System.out.println(SideType.PEPPER_FLAKES);
+                    superUberSandwich.setSideType(SideType.PEPPER_FLAKES);
                     createOrderMenu();
                     break;
 
@@ -701,10 +747,11 @@ public class SandwichApplication {
                     break;
 
             }
+            orders.addOrderItem(superUberSandwich);
         }
     }
 
-    public void drinkMakerMenu() {
+    public void drinkMakerMenu(Drink drinkSize) {
 
         boolean drinkConfirmed = false;
 
@@ -731,18 +778,24 @@ public class SandwichApplication {
                 case "1":
                     System.out.print(" You have selected Small. ");
                     System.out.printf("$%4.2f", DrinkSize.SMALL.getPrice());
+                    drinkSize.setSize(DrinkSize.SMALL);
+                    addDrinkToOrder(drinkSize);
                     drinkFlavorPicker();
                     break;
 
                 case "2":
                     System.out.print(" You have selected Medium. ");
                     System.out.printf("$%4.2f", DrinkSize.MEDIUM.getPrice());
+                    drinkSize.setSize(DrinkSize.MEDIUM);
+                    addDrinkToOrder(drinkSize);
                     drinkFlavorPicker();
                     break;
 
                 case "3":
                     System.out.print(" You have selected Large. ");
                     System.out.printf("$%4.2f", DrinkSize.LARGE.getPrice());
+                    drinkSize.setSize(DrinkSize.LARGE);
+                    addDrinkToOrder(drinkSize);
                     drinkFlavorPicker();
                     break;
 
@@ -758,12 +811,12 @@ public class SandwichApplication {
                     break;
 
             }
-
+            orders.addOrderItem(drinkSize);
         }
 
     }
 
-    public void drinkFlavorPicker() {
+    public void drinkFlavorPicker(Drink drinkFlavor) {
 
         boolean pickingFlavor = true;
 
@@ -795,30 +848,36 @@ public class SandwichApplication {
                 case "1":
                     System.out.print(" You have selected: ");
                     System.out.printf("%2s", Drink.DrinkFlavor.HI_C);
+                    drinkFlavor.setFlavor(Drink.DrinkFlavor.HI_C);
+                    addDrinkToOrder();
                     createOrderMenu();
                     break;
 
                 case "2":
                     System.out.print(" You have selected: ");
                     System.out.printf("%2s", Drink.DrinkFlavor.ROOT_BEER);
+                    drinkFlavor.setFlavor(Drink.DrinkFlavor.ROOT_BEER);
                     createOrderMenu();
                     break;
 
                 case "3":
                     System.out.print(" You have selected: ");
                     System.out.printf("%2s", Drink.DrinkFlavor.RIG_JUICE);
+                    drinkFlavor.setFlavor(Drink.DrinkFlavor.RIG_JUICE);
                     createOrderMenu();
                     break;
 
                 case "4":
                     System.out.print(" You have selected: ");
                     System.out.printf("%2s", Drink.DrinkFlavor.BUTTER_BEER);
+                    drinkFlavor.setFlavor(Drink.DrinkFlavor.BUTTER_BEER);
                     createOrderMenu();
                     break;
 
                 case "5":
                     System.out.print(" You have selected: ");
                     System.out.printf("%2s", Drink.DrinkFlavor.HEAL_POTION);
+                    drinkFlavor.setFlavor(Drink.DrinkFlavor.HEAL_POTION);
                     createOrderMenu();
                     break;
 
@@ -830,12 +889,13 @@ public class SandwichApplication {
                 default:
                     System.out.println(" These options are not available. Please pick a provided option. ");
                     break;
+                    
             }
+            orders.addOrderItem(drinkFlavor);
         }
-
     }
 
-    public void chipMakerMenu() {
+    public void chipMakerMenu(Chips chipFlavor) {
 
         boolean chipsPicked = false;
 
@@ -867,6 +927,7 @@ public class SandwichApplication {
                 case "1":
                     System.out.print(" You have selected: ");
                     System.out.printf("%2s", Chips.ChipFlavor.BBQ);
+                    addChipsToOrder(Chips.ChipFlavor.BBQ);
                     chipsPicked = true;
                     break;
 
@@ -874,23 +935,27 @@ public class SandwichApplication {
                     System.out.print(" You have selected: ");
                     System.out.printf("%2s", Chips.ChipFlavor.SOUR_CREAM_AND_ONION);
                     chipsPicked = true;
+                    addChipsToOrder(Chips.ChipFlavor.SOUR_CREAM_AND_ONION);
                     break;
 
                 case "3":
                     System.out.print(" You have selected: ");
                     System.out.printf("%2s", Chips.ChipFlavor.HONEY_BUTTER);
+                    addChipsToOrder(Chips.ChipFlavor.HONEY_BUTTER);
                     chipsPicked = true;
                     break;
 
                 case "4":
                     System.out.print(" You have selected: ");
                     System.out.printf("%2s", Chips.ChipFlavor.CLASSIC);
+                    addChipsToOrder(Chips.ChipFlavor.CLASSIC);
                     chipsPicked = true;
                     break;
 
                 case "5":
                     System.out.print(" You have selected: ");
                     System.out.printf("%2s", Chips.ChipFlavor.SALT_AND_VINEGAR);
+                    addChipsToOrder(Chips.ChipFlavor.SALT_AND_VINEGAR);
                     chipsPicked = true;
                     break;
 
@@ -898,7 +963,9 @@ public class SandwichApplication {
                 default:
                     System.out.println(" These options are not available. Please pick a provided option. ");
                     break;
+                    
             }
+            orders.addOrderItem(chipFlavor);
         }
     }
 }
