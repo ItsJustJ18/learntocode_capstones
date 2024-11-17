@@ -1,4 +1,4 @@
-# **DEL-ICIOUS SANDWICH SHOP**
+# **DELI-CIOUS SANDWICH SHOP**
 
 The project is designed as a capstone project for the LearnToCode series and demonstrates the usage of object-oriented programming concepts in Java, including classes, enums, constructors, and methods. Being able to make a sandwhich with many components, drink, and chips. With that it will be added to orders and add a sum of what is needed to complete a customer's receipt.
 
@@ -21,27 +21,20 @@ Object-Oriented Programming: Classes and methods are used to model the sandwich 
 
 ## **Need to Run Program**
 
-How to Run the Program
-Prerequisites
 Make sure you have Java 8 or higher installed. Preferably want to use Java 17.
-
-java -version
-If Java is not installed, you can download and install the latest version from the official Oracle website:
-Download Java
+(If Java isn't installed then go to https://www.oracle.com/java/technologies/downloads/)
 
 Installation
-Clone the Repository: If you have Git installed, you can clone the repository to your local machine:
+Clone the Repository: If you have Git installed, you can clone the repository to your local machine.
 
-git clone https://github.com/ItsJustJ18/learntocode_capstones.git
+GitHub repository link for Command Prompt: git clone https://github.com/ItsJustJ18/learntocode_capstones.git
+Then git clone again to the delicious-sandwich-shop repository
 
-
-javac *.java
 Run the Program: In the Initialize Program package -> RunSandwichShop
 
 This will simulate the creation of a order of sandwiches with toppings, drinks, and chips. Display the sandwich details, chips details, and drink details as well.
 
-Example Usage
-The program will create sample sandwiches and print the details as follows:
+Example of what can make a sandwich in the program:
 
 Receipt: For Order
 
@@ -65,6 +58,8 @@ Toasted: Yes
 
 Price: totalPriceOfSandwich += breadLength.getPrice() + meats.getMeatPrice + cheese.getCheesePrice();
 
+--------------------------------------------------------------------------------------------------------------
+
 Sandwich:
 
 Bread Length: LARGE
@@ -84,6 +79,8 @@ Side: PEPPER
 Toasted: No
 
 Price: totalPriceOfSandwich += breadLength.getPrice() + meats.getMeatPrice + cheese.getCheesePrice();
+
+-------------------------------------------------------------------------------------------------------------------
 
 Customizing Sandwiches
 
@@ -111,17 +108,17 @@ The program will print the sandwich receipt showing:
 The sandwich components selected (bread, cheese, toppings, etc.)
 The price of each sandwich
 The total price for the order (sandwich, drink, and/or chips)
-How to Modify the Program
 
 Adding More Ingredients
-To add more bread types, cheese, meats, or toppings, you can modify the corresponding enum classes (e.g., BreadType.java, Topping.java, etc.). Each enum is associated with a price, so you can add new options and set their prices accordingly.
+To add more bread types, cheese, meats, or toppings, you can modify the corresponding enum classes (e.g., BreadType.java, Topping.java, etc...)
 
 Modifying Price Calculation: Based on bread length, certain prices will be able to change. Drinks are the same as well, but chips are hard coded since they are basically all the same while drinks changes price based on the size
 
 ## More Features
 
 Custom Ingredient Quantities: Allow users to specify how many of each topping they want (e.g., extra cheese, double meat).
-Order History: Implement functionality to save and display past orders.
+
+Order History: Implement functionality to save and display past orders into a receipt folder that then has files created and saved into it.
 
 License
 This project is open-source
