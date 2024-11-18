@@ -34,7 +34,13 @@ Run the Program: In the Initialize Program package -> RunSandwichShop
 
 This will simulate the creation of a order of sandwiches with toppings, drinks, and chips. Display the sandwich details, chips details, and drink details as well.
 
+![Screenshot 2024-11-18 082512](https://github.com/user-attachments/assets/66f106bc-7ddd-45fe-b296-5116b1a81c3a)
+
+
 Example of what can make a sandwich in the program:
+
+![Screenshot 2024-11-18 0825124](https://github.com/user-attachments/assets/c62a706b-4fd1-454e-84a8-bc98f4ab6f4e)
+
 
 Receipt: For Order
 
