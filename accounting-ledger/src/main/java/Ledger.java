@@ -25,7 +25,7 @@ public class Ledger {
         userInput = new Scanner(System.in);
         //variable chosen as to detect a user
         //to tell the local time when using LocalTime.now
-        LocalTime currentTime = LocalTime.now();
+
 
 
         //boolean while loop until statement is false
@@ -69,7 +69,7 @@ public class Ledger {
                 System.out.printf("You now have: $%.2f", userAccount);
                 System.out.println();
                 System.out.println("Here's the transaction made to your account: ");
-                System.out.printf("Date: " + String.valueOf(now()) + " Time: " + LocalTime.now().withNano(0) + " Desc: " + description + " Vendor: " + vendor + " Amount: $%.2f", userAccount);
+                System.out.printf("Date: " + now() + " Time: " + LocalTime.now().withNano(0) + " Desc: " + description + " Vendor: " + vendor + " Amount: $%.2f", userAccount);
                 System.out.println();
                 //to do show money they want to add to the account
                 //to do show money that's added to the account (no calculations)
@@ -107,7 +107,7 @@ public class Ledger {
                 System.out.printf("You now have: $%.2f", userAccount);
                 System.out.println();
                 System.out.println("Here's the transaction made to your account: ");
-                System.out.printf("Date: " + String.valueOf(now()) + " Time: " + LocalTime.now().withNano(0) + " Desc: " + description + " Vendor: " + vendor + " Amount: $%.2f", userAccount);
+                System.out.printf("Date: " + now() + " Time: " + LocalTime.now().withNano(0) + " Desc: " + description + " Vendor: " + vendor + " Amount: $%.2f", userAccount);
                 System.out.println();
 
                 Transactions payTransaction = new Transactions(LocalDate.now(), LocalTime.now().withNano(0), description, vendor, -paymentAmount);
@@ -117,8 +117,8 @@ public class Ledger {
 
             } else if (choice.equalsIgnoreCase("L")) {
 
-                FileReader ledgerreader = new FileReader(filePath);
-                BufferedReader bufferedReader = new BufferedReader(ledgerreader);
+                FileReader ledgerReader = new FileReader(filePath);
+                BufferedReader bufferedReader = new BufferedReader(ledgerReader);
                 String superReader = bufferedReader.readLine();
 
                 boolean ledger_decision = true;
@@ -210,63 +210,59 @@ public class Ledger {
             choice = userInput.nextLine();
 
 
-            if (choice.equals("1")) {
+            switch (choice) {
+                case "1" -> {
 
-                System.out.println(" The month of " + LocalDate.now());
-                for (Transactions transaction : allTransactions) {
-                    if (transaction.getDate().isAfter(LocalDate.now().withDayOfMonth(1))) {
-                        System.out.println(transaction);
+                    System.out.println(" The month of " + LocalDate.now());
+                    for (Transactions transaction : allTransactions) {
+                        if (transaction.getDate().isAfter(LocalDate.now().withDayOfMonth(1))) {
+                            System.out.println(transaction);
+                        }
                     }
                 }
+                case "2" -> {
 
-            } else if (choice.equals("2")) {
-
-                System.out.println(" Here's all transactions made in the previous month. ");
-                for (Transactions transaction : allTransactions) {
-                    if (transaction.getDate().isBefore(LocalDate.now().withDayOfMonth(1)) && transaction.getDate().isAfter(LocalDate.of(2024, 9, 1))) {
-                        System.out.println(transaction);
+                    System.out.println(" Here's all transactions made in the previous month. ");
+                    for (Transactions transaction : allTransactions) {
+                        if (transaction.getDate().isBefore(LocalDate.now().withDayOfMonth(1)) && transaction.getDate().isAfter(LocalDate.of(2024, 9, 1))) {
+                            System.out.println(transaction);
+                        }
                     }
                 }
+                case "3" -> {
+                    System.out.println(" Here's all transactions made from this year to " + LocalDate.now());
 
-
-            } else if (choice.equals("3")) {
-                System.out.println(" Here's all transactions made from this year to " + LocalDate.now());
-
-                for (Transactions transaction : allTransactions) {
-                    if (transaction.getDate().isAfter(LocalDate.of(2024, 1, 1))) {
-                        System.out.println(transaction);
+                    for (Transactions transaction : allTransactions) {
+                        if (transaction.getDate().isAfter(LocalDate.of(2024, 1, 1))) {
+                            System.out.println(transaction);
+                        }
                     }
                 }
+                case "4" -> {
+                    System.out.println(" Here's all the transactions made from the previous year. ");
 
-
-            } else if (choice.equals("4")) {
-                System.out.println(" Here's all the transactions made from the previous year. ");
-
-                for (Transactions transaction : allTransactions) {
-                    if (transaction.getDate().isAfter(LocalDate.of(2023, 1, 1)) && transaction.getDate().isBefore(LocalDate.of(2024, 1, 1))) {
-                        System.out.println(transaction);
+                    for (Transactions transaction : allTransactions) {
+                        if (transaction.getDate().isAfter(LocalDate.of(2023, 1, 1)) && transaction.getDate().isBefore(LocalDate.of(2024, 1, 1))) {
+                            System.out.println(transaction);
+                        }
                     }
                 }
+                case "5" -> {
 
-            } else if (choice.equals("5")) {
+                    System.out.println(" Which vendor would you like to search for?");
+                    String vendor = userInput.nextLine();
 
-                System.out.println(" Which vendor would you like to search for?");
-                String vendor = userInput.nextLine();
-
-                for (Transactions transaction : allTransactions) {
-                    if (transaction.getVendor().equalsIgnoreCase(vendor)) {
-                        System.out.println(transaction);
+                    for (Transactions transaction : allTransactions) {
+                        if (transaction.getVendor().equalsIgnoreCase(vendor)) {
+                            System.out.println(transaction);
+                        }
                     }
+
+
+                    System.out.println("  ");
                 }
-
-
-                System.out.println("  ");
-            } else if (choice.equals("0")) {
-
-                make_your_choice = false;
-
-            } else {
-                System.out.println("Sorry invalid entry.");
+                case "0" -> make_your_choice = false;
+                default -> System.out.println("Sorry invalid entry.");
             }
 
         }
@@ -278,8 +274,8 @@ public class Ledger {
 
         try {
 
-            FileReader ledgerreader = new FileReader(filePath);
-            BufferedReader bufferedReader = new BufferedReader(ledgerreader);
+            FileReader ledgerReader = new FileReader(filePath);
+            BufferedReader bufferedReader = new BufferedReader(ledgerReader);
             String superReader = bufferedReader.readLine();
 
             while ((superReader = bufferedReader.readLine()) != null) {

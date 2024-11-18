@@ -18,41 +18,14 @@ public class Transactions {
         return date;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
-    public LocalTime getTime() {
-        return time;
-    }
-
-    public void setTime(LocalTime time) {
-        this.time = time;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public String getVendor() {
         return vendor;
-    }
-
-    public void setVendor(String vendor) {
-        this.vendor = vendor;
     }
 
     public Double getUserAmount() {
         return userAmount;
     }
 
-    public void setUserAmount(double userAmount) {
-        this.userAmount = userAmount;
-    }
 
     public Transactions(LocalDate date, LocalTime time, String description, String vendor, Double userAmount) {
         this.date = date;
