@@ -14,44 +14,21 @@ enum EnumClasses.RegularToppings {
 class SuperUberSnackShack.Drink {
 ~ DrinkSize size
 ~ DrinkFlavor flavor
++ DrinkFlavor getFlavor()
++ DrinkSize getSize()
++ void setSize(DrinkSize)
++ void setFlavor(DrinkFlavor)
++ double getDrinkPrice()
 + double getPrice()
++ String printToReceipt()
 + String toString()
 }
 
-
-enum SuperUberSnackShack.DrinkFlavor {
-+  HI_C
-+  ROOT_BEER
-+  RIG_JUICE
-+  BUTTER_BEER
-+  HEAL_POTION
-}
 
 class ReceiptKeeper.PrintReceipt {
 + {static} void makeReceipt(Orders)
 }
 
-class SuperUberSnackShack.CustomerOrder {
-~ String customerName
-~ String orderNumber
-~ String sandwichForOrder
-~ boolean sandwichSpecial
-~ boolean drink
-~ boolean chips
-~ boolean sauce
-+ String getCustomerName()
-+ String getOrderNumber()
-+ String getSandwichForOrder()
-+ boolean isSandwichSpecial()
-+ boolean isDrink()
-+ boolean isChips()
-+ boolean isSauce()
-+ String toString()
-}
-
-
-class SuperUberSnackShack.RegularToppings {
-}
 enum EnumClasses.BreadType {
 +  WHEAT
 +  WHITE
@@ -62,36 +39,44 @@ enum EnumClasses.BreadType {
 class SuperUberSnackShack.Sandwich {
 - BreadLength breadLength
 - BreadType breadType
-- ArrayList<Cheese> cheeses
-- ArrayList<Meat> bigMeats
-- ArrayList<Topping> toppingList
+- Cheese.CheeseType cheeses
+- Meat.Meats bigMeats
+- RegularToppings toppingList
 - SauceFlavor sauceFlavor
 - SideType sideType
 - boolean toastedSandwich
-+ void removeTopping(Topping)
-+ void addTopping(Topping)
+- boolean haveExtraToppings
 + BreadLength getBreadLength()
-+ BreadType getBreadType()
-+ ArrayList<Cheese> getCheeses()
-+ ArrayList<Meat> getBigMeats()
-+ ArrayList<Topping> getToppingList()
-+ SauceFlavor getSauceFlavor()
-+ SideType getSideType()
-+ boolean isToastedSandwich()
 + void setBreadLength(BreadLength)
++ BreadType getBreadType()
 + void setBreadType(BreadType)
-+ void setCheeses(ArrayList<Cheese>)
-+ void setBigMeats(ArrayList<Meat>)
-+ void setToppingList(ArrayList<Topping>)
++ Cheese.CheeseType getCheeses()
++ void setCheeses(Cheese.CheeseType)
++ Meat.Meats getBigMeats()
++ void setBigMeats(Meat.Meats)
++ RegularToppings getToppingList()
++ boolean isHaveExtraToppings()
++ void setToppingList(RegularToppings)
++ SauceFlavor getSauceFlavor()
 + void setSauceFlavor(SauceFlavor)
++ SideType getSideType()
 + void setSideType(SideType)
++ boolean isToastedSandwich()
 + void setToastedSandwich(boolean)
++ void setHaveExtraToppings(boolean)
++ double getPrice()
++ double getSandwichSizePrice()
++ double getCheesePrice()
++ double getMeatPrice()
++ String printToReceipt()
++ String toString()
 }
 
 
 class SuperUberSnackShack.Cheese {
 - Cheese cheeseWanted
 + String toString()
++ String printToReceipt()
 }
 
 
@@ -115,8 +100,8 @@ enum EnumClasses.BreadLength {
 
 abstract class SuperUberSnackShack.Items {
 ~ double price
-+ {static} void add(Items)
 + double getPrice()
++ {abstract}String printToReceipt()
 }
 
 
@@ -136,18 +121,38 @@ enum EnumClasses.SideType {
 }
 
 class SuperUberSnackShack.Orders {
-- double totalOrderPrice
-- ArrayList<Items> itemList
+- {static} double totalOrderPrice
+- {static} List<Items> itemList
 + void addOrderItem(Items)
 + double getTotalOrderPrice()
-+ ArrayList<Items> getItemList()
-+ double totalPriceOfOrder()
++ List<Items> getItemList()
++ {static} double totalPriceOfOrder()
 }
 
 
-class SuperUberSnackShack.SandwichCheeses {
-+ double getCheesePrice()
+class SuperUberSnackShack.UserInterface.SandwichApplication {
+- Scanner user
+~ Orders orders
++ void customerOrderScreen()
++ void createOrderMenu()
++ void customerOrderSummary()
++ void checkOutMenu(Orders)
++ void sandwichMakerMenu()
++ void breadPicker(Sandwich)
++ void pickTheCheese(Sandwich)
++ void wantsExtraCheese(Sandwich)
++ void meatPickerMenu(Sandwich)
++ void wantsExtraMeat(Sandwich)
++ void regularToppings(Sandwich)
++ void wantsExtraToppings(Sandwich)
++ void wantsSandwichToasted(Sandwich)
++ void sauceMenu(Sandwich)
++ void sideMenu(Sandwich)
++ void drinkMakerMenu()
++ void drinkFlavorPicker(Drink)
++ void chipMakerMenu()
 }
+
 
 enum EnumClasses.SauceFlavor {
 +  KRABBY_PATTY_FORMULA
@@ -161,28 +166,8 @@ enum EnumClasses.SauceFlavor {
 +  VINAIGRETTE
 }
 
-class SuperUberSnackShack.Screen.SandwichApplication {
-- Scanner user
-+ void customerOrderScreen()
-+ void createOrderMenu()
-+ void checkOutMenu()
-+ void sandwichMakerMenu()
-+ void breadPicker()
-+ void pickTheCheese()
-+ void meatPickerMenu()
-+ void regularToppingMenu()
-+ void sauceMenu()
-+ void sideMenu()
-+ void drinkMakerMenu()
-+ void drinkFlavorPicker()
-+ void chipMakerMenu()
-}
-
-
 class SuperUberSnackShack.Meat {
 - Meat meatWanted
-+ Meat getMeatWanted()
-+ double getMeatPrice()
 + String toString()
 }
 
@@ -196,12 +181,27 @@ enum SuperUberSnackShack.Meats {
 +  BACON
 }
 
-class SuperUberSnackShack.SandwichMeat {
-+ double getMeatPrice()
+enum EnumClasses.DrinkFlavor {
++  HI_C
++  ROOT_BEER
++  RIG_JUICE
++  BUTTER_BEER
++  HEAL_POTION
+- int menuOption
++ int getMenuOption()
 }
+
 
 class InitializeProgram.RunSandwichShop {
 + {static} void main(String[])
+}
+
+enum EnumClasses.ChipFlavor {
++  BBQ
++  SOUR_CREAM_AND_ONION
++  HONEY_BUTTER
++  CLASSIC
++  SALT_AND_VINEGAR
 }
 
 abstract class SuperUberSnackShack.PremiumToppings {
@@ -213,40 +213,31 @@ interface Interfaces.Price {
 }
 
 class SuperUberSnackShack.Chips {
-- String chipName
-- double price
-+ String getChipName()
+- ChipFlavor chipName
+- double PRICE
++ ChipFlavor getChipName()
++ void setChipName(ChipFlavor)
 + double getPrice()
++ String printToReceipt()
 + String toString()
 }
 
-
-enum SuperUberSnackShack.ChipFlavor {
-+  BBQ
-+  SOUR_CREAM_AND_ONION
-+  HONEY_BUTTER
-+  CLASSIC
-+  SALT_AND_VINEGAR
-}
 
 class SuperUberSnackShack.Topping {
 ~ BreadLength breadLength
 ~ boolean haveExtraToppings
 + double getPrice()
++ String printToReceipt()
 }
 
 
 
 
 SuperUberSnackShack.Items <|-- SuperUberSnackShack.Drink
-SuperUberSnackShack.Topping <|-- SuperUberSnackShack.RegularToppings
-Interfaces.Price <|.. SuperUberSnackShack.Sandwich
 SuperUberSnackShack.Items <|-- SuperUberSnackShack.Sandwich
-SuperUberSnackShack.SandwichCheeses <|-- SuperUberSnackShack.Cheese
+SuperUberSnackShack.PremiumToppings <|-- SuperUberSnackShack.Cheese
 Interfaces.Price <|.. SuperUberSnackShack.Items
-SuperUberSnackShack.PremiumToppings <|-- SuperUberSnackShack.SandwichCheeses
-SuperUberSnackShack.SandwichMeat <|-- SuperUberSnackShack.Meat
-SuperUberSnackShack.PremiumToppings <|-- SuperUberSnackShack.SandwichMeat
+SuperUberSnackShack.PremiumToppings <|-- SuperUberSnackShack.Meat
 SuperUberSnackShack.Topping <|-- SuperUberSnackShack.PremiumToppings
 SuperUberSnackShack.Items <|-- SuperUberSnackShack.Chips
 SuperUberSnackShack.Items <|-- SuperUberSnackShack.Topping

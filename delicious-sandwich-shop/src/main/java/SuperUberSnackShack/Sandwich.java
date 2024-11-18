@@ -5,9 +5,9 @@ import EnumClasses.BreadType;
 import EnumClasses.RegularToppings;
 import EnumClasses.SauceFlavor;
 import EnumClasses.SideType;
-import Interfaces.Price;
 
-public class Sandwich extends Items implements Price {
+
+public class Sandwich extends Items {
 
     //instance variables to determine what a sandwich needs to be made
     private BreadLength breadLength;

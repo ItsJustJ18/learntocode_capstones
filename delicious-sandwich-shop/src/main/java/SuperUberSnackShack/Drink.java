@@ -2,9 +2,9 @@ package SuperUberSnackShack;
 
 import EnumClasses.DrinkFlavor;
 import EnumClasses.DrinkSize;
-import Interfaces.Price;
 
-public class Drink extends Items implements Price {
+
+public class Drink extends Items {
 
     DrinkSize size;
     DrinkFlavor flavor;

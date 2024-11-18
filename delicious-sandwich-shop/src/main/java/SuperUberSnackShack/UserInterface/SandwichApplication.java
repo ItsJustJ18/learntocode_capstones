@@ -904,6 +904,8 @@ public class SandwichApplication {
                     
                      Welcome to our drinks menu. What size drink would you like to get?
                     
+                    **Please Type the size wanted**
+                    
                     1) Small
                     
                     2) Medium
@@ -969,6 +971,8 @@ public class SandwichApplication {
                     
                     
                      What flavor would you like with your drink?
+                    
+                     **Please Type the size wanted**
                     
                     1) HI-C
                     
@@ -1060,6 +1064,8 @@ public class SandwichApplication {
                     
                     
                     Welcome to our drinks menu. What size drink would you like to get?
+                    
+                    **Please Type the size wanted**
                     
                     1) BBQ
                     
