@@ -39,7 +39,7 @@ This will simulate the creation of a order of sandwiches with toppings, drinks, 
 
 Example of what can make a sandwich in the program:
 
-![Screenshot 2024-11-18 0825124](https://github.com/user-attachments/assets/c62a706b-4fd1-454e-84a8-bc98f4ab6f4e)
+![Screenshot 2024-11-18 091651](https://github.com/user-attachments/assets/fc04624f-4443-450e-b34d-173925610ce8)
 
 
 Receipt: For Order
