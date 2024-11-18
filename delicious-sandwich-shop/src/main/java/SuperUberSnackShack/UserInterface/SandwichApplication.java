@@ -106,7 +106,7 @@ public class SandwichApplication {
 
                 case "5":
                     orderIsDone = true;
-                    checkOutMenu();
+                    checkOutMenu(orders);
                     break;
 
                 case "6":
@@ -137,16 +137,16 @@ public class SandwichApplication {
         System.out.println(orders.getItemList());
         for (Items item : orders.getItemList()) {
             if (item instanceof Sandwich superUberSandwich) {
-                System.out.print(" \n BreadLength: " + " " + superUberSandwich.getBreadLength());
-                System.out.print(" \n Bread: " + " " + superUberSandwich.getBreadType());
-                System.out.print(" \n Sandwich Toasted: " + superUberSandwich.isToastedSandwich());
-                System.out.print(" \n Meat(s): " + " " + superUberSandwich.getBigMeats());
-                System.out.print(" \n Cheese(s): " + " " + superUberSandwich.getCheeses());
-                System.out.print(" \n Topping(s): " + " " + superUberSandwich.getToppingList());
-                System.out.print(" \n Extra Topping(s): " + " " + superUberSandwich.isHaveExtraToppings());
-                System.out.print(" \n Sauce: " + " " + superUberSandwich.getSauceFlavor());
-                System.out.print(" \n Side(s): " + " " + superUberSandwich.getSideType());
-                System.out.printf(" \n Total Price of Sandwich:  $%4.2f", superUberSandwich.getPrice());
+                System.out.print(" \n BreadLength:" + " " + superUberSandwich.getBreadLength());
+                System.out.print(" \n Bread:" + " " + superUberSandwich.getBreadType());
+                System.out.print(" \n Sandwich Toasted:" + superUberSandwich.isToastedSandwich());
+                System.out.print(" \n Meat(s):" + " " + superUberSandwich.getBigMeats());
+                System.out.print(" \n Cheese(s):" + " " + superUberSandwich.getCheeses());
+                System.out.print(" \n Topping(s):" + " " + superUberSandwich.getToppingList());
+                System.out.print(" \n Extra Topping(s):" + " " + superUberSandwich.isHaveExtraToppings());
+                System.out.print(" \n Sauce:" + " " + superUberSandwich.getSauceFlavor());
+                System.out.print(" \n Side(s):" + " " + superUberSandwich.getSideType());
+                System.out.printf(" \n Total Price of Sandwich:  $%2.2f", superUberSandwich.getPrice());
 
             } else if (item instanceof Drink drink) {
                 System.out.print(" \n Flavor: " + drink.getFlavor());
@@ -167,7 +167,7 @@ public class SandwichApplication {
     }
 
 
-    public void checkOutMenu() {
+    public void checkOutMenu(Orders orders) {
 
         boolean leave = true;
 

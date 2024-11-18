@@ -7,7 +7,7 @@ public enum DrinkFlavor {
     BUTTER_BEER(4),
     HEAL_POTION(5);
 
-    private int menuOption;
+    private final int menuOption;
 
     DrinkFlavor(int menuOption) {
         this.menuOption = menuOption;

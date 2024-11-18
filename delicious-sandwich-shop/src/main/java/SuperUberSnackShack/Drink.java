@@ -34,24 +34,22 @@ public class Drink extends Items implements Price {
 
     }
 
-    public void getDrinkPrice() {
+    public double getDrinkPrice() {
 
         //provides the switch case based on the size the user picks and the price correlated with it
+        return switch (size) {
+            case SMALL -> 2.00;
+            case MEDIUM -> 2.50;
+            case LARGE -> 3.00;
 
-        switch (size) {
-            case SMALL -> price = 2.00;
-            case MEDIUM -> price = 2.50;
-            case LARGE -> price = 3.00;
-            default -> {
-                System.out.print(" Sorry that size is not recognized. ");
-            }
-        }
+        };
     }
 
     //returns the price of the drink from the items super class method
     @Override
     public double getPrice() {
-        return super.getPrice();
+        return getDrinkPrice();
+
     }
 
 
@@ -62,7 +60,7 @@ public class Drink extends Items implements Price {
     //the format that drink will print with size and flavor in the toString
     @Override
     public String toString() {
-        return "$" + size + " " + flavor;
+        return "$" + getDrinkPrice() + " " + flavor;
     }
 }
 

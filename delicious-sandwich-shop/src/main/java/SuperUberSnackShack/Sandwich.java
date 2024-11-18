@@ -106,41 +106,80 @@ public class Sandwich extends Items implements Price {
         this.haveExtraToppings = haveExtraToppings;
     }
 
+    @Override
+    public double getPrice() {
+
+        double sizePrice = 0.0;
+        sizePrice = getSandwichSizePrice();
+
+        double cheesePrice = 0.0;
+        cheesePrice = getCheesePrice();
+
+        double meatPrice = 0.0;
+        meatPrice = getMeatPrice();
+
+       return sizePrice + cheesePrice + meatPrice;
+    }
+
+    public double getSandwichSizePrice() {
+        double sandwichSizePrice = 0.0;
+        return switch (breadLength) {
+            case FOUR_INCHES -> sandwichSizePrice + 5.50;
+            case EIGHT_INCHES -> sandwichSizePrice + 7.00;
+            case TWELVE_INCHES -> sandwichSizePrice + 8.50;
+        };
+    }
+
     //hard code the prices for each bread length and if user wants extra cheese
     //inside a recursive loop
     public double getCheesePrice() {
+
+        double cheesePrice = 0.0;
+
         if (breadLength == BreadLength.FOUR_INCHES) {
-            price = .75;
-            if (haveExtraToppings) price = getCheesePrice() + .30;
+            cheesePrice = .75;
+            if (haveExtraToppings) cheesePrice = cheesePrice + .30;
         } else if (breadLength == BreadLength.EIGHT_INCHES) {
-            price = 1.50;
-            if (haveExtraToppings) price = getCheesePrice() + .60;
+            cheesePrice = 1.50;
+            if (haveExtraToppings) cheesePrice = cheesePrice + .60;
         } else if (breadLength == BreadLength.TWELVE_INCHES) {
-            price = 2.25;
-            if (haveExtraToppings) price = getCheesePrice() + .90;
+            cheesePrice = 2.25;
+            if (haveExtraToppings) cheesePrice = cheesePrice + .90;
         }
-        return price;
+        else {
+            return 0.0;
+        }
+        return cheesePrice;
     }
 
 
     //hard code the prices for each bread length and if user wants extra meat
     //inside a recursive loop
     public double getMeatPrice() {
+
+        double meatPrice = 0.0;
+
         if (breadLength == BreadLength.FOUR_INCHES) {
-            price = 1.00;
-            if (haveExtraToppings) price = getMeatPrice() + .50;
+            meatPrice = 1.00;
+            if (haveExtraToppings) meatPrice = meatPrice + .50;
         } else if (breadLength == BreadLength.EIGHT_INCHES) {
-            price = 2.00;
-            if (haveExtraToppings) price = getMeatPrice() + 1.00;
+            meatPrice = 2.00;
+            if (haveExtraToppings) meatPrice = meatPrice + 1.00;
         } else if (breadLength == BreadLength.TWELVE_INCHES) {
-            price = 3.00;
-            if (haveExtraToppings) price = getMeatPrice() + 1.50;
+            meatPrice = 3.00;
+            if (haveExtraToppings) meatPrice = meatPrice + 1.50;
         }
-        return price;
+        else {
+            return 0.0;
+        }
+        return meatPrice;
     }
 
 
     public String printToReceipt() {
-      return String.format("%s %s", breadLength, breadType);
+        return String.format("%s %s", breadLength, breadType);
+    }
+    public String toString() {
+        return "$" + getSandwichSizePrice() + " \n" + breadLength + " \n" + breadType + " \n" + isToastedSandwich() + " \n" + bigMeats + " \n" + cheeses + " \n" + getToppingList() + " \n" + sauceFlavor + " \n" + sideType;
     }
 }

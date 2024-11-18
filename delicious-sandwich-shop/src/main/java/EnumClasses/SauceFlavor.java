@@ -9,5 +9,5 @@ public enum SauceFlavor {
     KETCHUP,
     RANCH,
     THOUSAND_ISLAND,
-    VINAIGRETTE;
+    VINAIGRETTE
 }

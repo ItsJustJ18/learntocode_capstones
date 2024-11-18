@@ -1,5 +1,6 @@
 package ReceiptKeeper;
 
+import SuperUberSnackShack.Items;
 import SuperUberSnackShack.Orders;
 
 import java.io.BufferedWriter;
@@ -16,9 +17,14 @@ public class PrintReceipt {
         try {
             FileWriter fileWriter = new FileWriter("src/main/resources/CopyOfReceipt" + currentDateAndTime.format(formatter) + ".txt");
             BufferedWriter buffWriter = new BufferedWriter(fileWriter);
+            for(Items item : customerOrder.getItemList()) {
 
-            buffWriter.write(customerOrder.toString());
+                buffWriter.write(item.toString());
+            }
+
             buffWriter.write(String.format("Total Price of Order: $%2.2f ", customerOrder.getTotalOrderPrice()));
+            buffWriter.flush();
+            buffWriter.close();
         }
         catch (IOException e) {
             throw new RuntimeException();

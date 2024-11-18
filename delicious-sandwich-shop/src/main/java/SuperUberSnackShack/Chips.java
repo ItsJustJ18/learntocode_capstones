@@ -22,7 +22,7 @@ public class Chips extends Items {
 
     //return the price of Chips which is hard coded as $1.50
     public double getPrice() {
-        return price;
+        return PRICE;
     }
 
     @Override
@@ -33,6 +33,6 @@ public class Chips extends Items {
     //How the chipName with price will be printed
     @Override
     public String toString() {
-        return "$" + price + " " + chipName;
+        return "$" + PRICE + " " + chipName;
     }
 }
