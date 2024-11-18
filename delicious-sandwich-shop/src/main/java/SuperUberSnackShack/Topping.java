@@ -19,4 +19,9 @@ public class Topping extends Items {
     public double getPrice() {
         return 0;
     }
+
+    @Override
+    public String printToReceipt() {
+        return "";
+    }
 }

@@ -2,12 +2,12 @@ package SuperUberSnackShack;
 
 import EnumClasses.BreadLength;
 
-public class Cheese extends SandwichCheeses {
+public class Cheese extends PremiumToppings {
 
     //cheeses that are picked can't be adjusted unless user cancels order
     private final Cheese cheeseWanted;
 
-    //the result price of cheese varys on bread length and if they would like extra cheese
+    //the result price of cheese varies on bread length and if they would like extra cheese
     public Cheese(boolean haveExtra, BreadLength breadLength, Cheese cheeseWanted) {
         super(haveExtra, breadLength);
         this.cheeseWanted = cheeseWanted;
@@ -16,6 +16,11 @@ public class Cheese extends SandwichCheeses {
     //how the cheese will be printed in a toString
     public String toString() {
         return "$" + price + " " + cheeseWanted;
+    }
+
+    @Override
+    public String printToReceipt() {
+        return "";
     }
 
     //list of cheese types

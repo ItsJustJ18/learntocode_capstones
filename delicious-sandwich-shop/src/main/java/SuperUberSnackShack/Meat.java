@@ -2,7 +2,7 @@ package SuperUberSnackShack;
 
 import EnumClasses.BreadLength;
 
-public class Meat extends SandwichMeat {
+public class Meat extends PremiumToppings {
 
     private Meat meatWanted;
 
@@ -16,15 +16,15 @@ public class Meat extends SandwichMeat {
         return meatWanted;
     }
 
-    //return meat price with SandwichMeat class that goes into Premium Toppings
-    @Override
-    public double getMeatPrice() {
-        return super.getMeatPrice();
-    }
 
     //format how the meat will be listed with price in the toString
     public String toString() {
         return "$" + price + " " + meatWanted;
+    }
+
+    @Override
+    public String printToReceipt() {
+        return "";
     }
 
     //list of meats the user can choose from
@@ -36,5 +36,5 @@ public class Meat extends SandwichMeat {
         CHICKEN,
         BACON;
     }
-
 }
+

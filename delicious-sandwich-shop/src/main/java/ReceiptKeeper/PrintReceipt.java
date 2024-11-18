@@ -18,7 +18,7 @@ public class PrintReceipt {
             BufferedWriter buffWriter = new BufferedWriter(fileWriter);
 
             buffWriter.write(customerOrder.toString());
-            buffWriter.write(String.format("Total Price of Order: $%2.2 ", customerOrder.getTotalOrderPrice()));
+            buffWriter.write(String.format("Total Price of Order: $%2.2f ", customerOrder.getTotalOrderPrice()));
         }
         catch (IOException e) {
             throw new RuntimeException();

@@ -1,16 +1,16 @@
 package SuperUberSnackShack;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Orders {
 
     //instance variables with totalPrice and List of Items to get overall price when customer is done
-    private double totalOrderPrice;
-    private ArrayList<Items> itemList;
+    private static double totalOrderPrice;
+    private static final List<Items> itemList = new ArrayList<>();
 
     public Orders() {
-        this.totalOrderPrice = totalOrderPrice;
-        this.itemList = new ArrayList<>();
+
     }
     //adds item to a list formed by the customer depending on what they select
     public void addOrderItem(Items item) {
@@ -23,12 +23,12 @@ public class Orders {
     }
 
     //returns a list of items that a customer picks and makes it into a list
-    public ArrayList<Items> getItemList() {
+    public List<Items> getItemList() {
         return itemList;
     }
     //totalPrice of the Order method
-    public double totalPriceOfOrder(){
-         this.totalOrderPrice = 0;
+    public static double totalPriceOfOrder(){
+         totalOrderPrice = 0;
         for (Items item : itemList) {
              totalOrderPrice += item.getPrice();
         }
