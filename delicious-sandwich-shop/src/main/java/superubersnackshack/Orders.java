@@ -1,4 +1,4 @@
-package SuperUberSnackShack;
+package superubersnackshack;
 
 import java.util.ArrayList;
 import java.util.List;

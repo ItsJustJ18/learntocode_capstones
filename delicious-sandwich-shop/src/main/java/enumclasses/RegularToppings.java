@@ -1,4 +1,4 @@
-package EnumClasses;
+package enumclasses;
 
 public enum RegularToppings {
     LETTUCE,

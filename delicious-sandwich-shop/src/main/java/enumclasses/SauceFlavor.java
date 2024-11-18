@@ -1,4 +1,4 @@
-package EnumClasses;
+package enumclasses;
 
 public enum SauceFlavor {
     KRABBY_PATTY_FORMULA,

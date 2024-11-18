@@ -1,7 +1,7 @@
-package ReceiptKeeper;
+package receiptkeeper;
 
-import SuperUberSnackShack.Items;
-import SuperUberSnackShack.Orders;
+import superubersnackshack.Items;
+import superubersnackshack.Orders;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

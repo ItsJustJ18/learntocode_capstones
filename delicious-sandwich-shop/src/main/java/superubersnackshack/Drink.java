@@ -1,7 +1,7 @@
-package SuperUberSnackShack;
+package superubersnackshack;
 
-import EnumClasses.DrinkFlavor;
-import EnumClasses.DrinkSize;
+import enumclasses.DrinkFlavor;
+import enumclasses.DrinkSize;
 
 
 public class Drink extends Items {

@@ -1,10 +1,10 @@
-package SuperUberSnackShack;
+package superubersnackshack;
 
-import EnumClasses.BreadLength;
-import EnumClasses.BreadType;
-import EnumClasses.RegularToppings;
-import EnumClasses.SauceFlavor;
-import EnumClasses.SideType;
+import enumclasses.BreadLength;
+import enumclasses.BreadType;
+import enumclasses.RegularToppings;
+import enumclasses.SauceFlavor;
+import enumclasses.SideType;
 
 
 public class Sandwich extends Items {

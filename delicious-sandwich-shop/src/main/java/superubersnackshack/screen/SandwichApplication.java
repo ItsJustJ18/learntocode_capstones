@@ -1,11 +1,11 @@
-package SuperUberSnackShack.UserInterface;
+package superubersnackshack.screen;
 
-import EnumClasses.*;
-import EnumClasses.RegularToppings;
-import ReceiptKeeper.PrintReceipt;
-import SuperUberSnackShack.*;
+import enumclasses.*;
+import enumclasses.RegularToppings;
+import receiptkeeper.PrintReceipt;
+import superubersnackshack.*;
 import java.util.Scanner;
-import static EnumClasses.DrinkSize.SMALL;
+import static enumclasses.DrinkSize.SMALL;
 
 public class SandwichApplication {
 

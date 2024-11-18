@@ -1,7 +1,7 @@
-package SuperUberSnackShack;
+package superubersnackshack;
 
 
-import EnumClasses.BreadLength;
+import enumclasses.BreadLength;
 
 //Topping extends to Items amd calculates the price based what is needed with the method
 public class Topping extends Items {

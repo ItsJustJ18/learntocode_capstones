@@ -1,4 +1,4 @@
-package EnumClasses;
+package enumclasses;
 
 public enum SideType {
     SALT,

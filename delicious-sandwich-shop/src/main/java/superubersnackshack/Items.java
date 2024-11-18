@@ -1,6 +1,6 @@
-package SuperUberSnackShack;
+package superubersnackshack;
 
-import Interfaces.Price;
+import interfaces.Price;
 
 //made the class abstract to make an Override for each price
 public abstract class Items implements Price {

@@ -1,6 +1,6 @@
-package SuperUberSnackShack;
+package superubersnackshack;
 
-import EnumClasses.BreadLength;
+import enumclasses.BreadLength;
 
 public class Meat extends PremiumToppings {
 

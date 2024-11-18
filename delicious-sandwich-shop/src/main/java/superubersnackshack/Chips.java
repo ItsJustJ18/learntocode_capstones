@@ -1,6 +1,6 @@
-package SuperUberSnackShack;
+package superubersnackshack;
 
-import EnumClasses.ChipFlavor;
+import enumclasses.ChipFlavor;
 
 //chips extends to the Items superclass
 public class Chips extends Items {

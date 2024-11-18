@@ -1,4 +1,4 @@
-package EnumClasses;
+package enumclasses;
 
 public enum DrinkFlavor {
     HI_C(1),

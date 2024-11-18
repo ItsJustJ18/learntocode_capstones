@@ -1,6 +1,6 @@
-package InitializeProgram;
+package initializeprogram;
 
-import SuperUberSnackShack.Screen.SandwichApplication;
+import superubersnackshack.screen.SandwichApplication;
 
 public class RunSandwichShop {
 
