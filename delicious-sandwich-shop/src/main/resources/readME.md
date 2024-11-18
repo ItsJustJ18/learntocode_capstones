@@ -4,7 +4,8 @@ The project is designed as a capstone project for the LearnToCode series and dem
 
 ## **UML Diagram**
 
-![super-uber-snack-shack-diagram](https://github.com/user-attachments/assets/fcbe2ebb-b2af-42b7-ab4d-ef363aa6a6d1)
+![uml-diagram](https://github.com/user-attachments/assets/787f490e-9637-40ac-a305-a452eb27e289)
+
 
 
 ## **Features**
