@@ -4,7 +4,8 @@ The project is designed as a capstone project for the LearnToCode series and dem
 
 ## **UML Diagram**
 
-![super-uber-snack-shack-diagram](https://github.com/user-attachments/assets/fcbe2ebb-b2af-42b7-ab4d-ef363aa6a6d1)
+![uml-diagram](https://github.com/user-attachments/assets/787f490e-9637-40ac-a305-a452eb27e289)
+
 
 
 ## **Features**
@@ -34,7 +35,13 @@ Run the Program: In the Initialize Program package -> RunSandwichShop
 
 This will simulate the creation of a order of sandwiches with toppings, drinks, and chips. Display the sandwich details, chips details, and drink details as well.
 
+![Screenshot 2024-11-18 082512](https://github.com/user-attachments/assets/66f106bc-7ddd-45fe-b296-5116b1a81c3a)
+
+
 Example of what can make a sandwich in the program:
+
+![Screenshot 2024-11-18 091651](https://github.com/user-attachments/assets/fc04624f-4443-450e-b34d-173925610ce8)
+
 
 Receipt: For Order
 
@@ -114,7 +121,7 @@ To add more bread types, cheese, meats, or toppings, you can modify the correspo
 
 Modifying Price Calculation: Based on bread length, certain prices will be able to change. Drinks are the same as well, but chips are hard coded since they are basically all the same while drinks changes price based on the size
 
-## More Features
+More Features
 
 Custom Ingredient Quantities: Allow users to specify how many of each topping they want (e.g., extra cheese, double meat).
 
@@ -124,8 +131,6 @@ License
 This project is open-source
 
 Author: Jermaine Eggleston (ItsJustJ18)
-
-## Images
 
 ![Screenshot 2024-11-15 090035](https://github.com/user-attachments/assets/88d87bc4-c716-48a6-8449-d921bddb6e08)
 ![Screenshot 2024-11-15 090303](https://github.com/user-attachments/assets/d5cb3dde-b790-41fa-8584-707dd8125fcf)
